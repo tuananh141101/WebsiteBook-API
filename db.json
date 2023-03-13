@@ -389,6 +389,32 @@
       "categories": ["Family"],
       "image": "/images/img-book-30.png",
       "sale": false
+    },
+    {
+      "id": 31,
+      "name": "Winter Loon: A Novel",
+      "description": "Abandoned by his father after his mother drowns in a frozen Minnesota lake, fifteen-year-old Wes Ballot is stranded with coldhearted grandparents and holed up in his mother's old bedroom, surrounded by her remnants and memories. As the wait for his father stretches unforgivably into months, a local girl, whose own mother died a brutal death, captures his heart and imagination, giving Wes fresh air to breathe in the suffocating small town.",
+      "price": 11.00,
+      "year_published": 2018,
+      "pages": 350,
+      "language": "English",
+      "author": "Susan Bernhard",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-31.png",
+      "sale": true
+    },
+    {
+      "id": 32,
+      "name": "The Traitor's Niche: A Novel",
+      "description": "At the heart of the Ottoman Empire, in the main square of Constantinople, a niche is carved into ancient stone. Here, the sultan displays the severed heads of his adversaries. People flock to see the latest head and gossip about the state of the empire: the province of Albania is demanding independence again, and the niche awaits a new trophy…",
+      "price": 16.93,
+      "year_published": 2018,
+      "pages": 400,
+      "language": "English",
+      "author": "Ismail Kadare",
+      "categories": ["History","Uncategorized"],
+      "image": "/images/img-book-32.png",
+      "sale": false
     }
   ],
   "comments": [{
