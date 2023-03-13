@@ -1,99 +1,127 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": 1,
-      "name": "Red T-Shirt",
-      "description": "A comfortable and stylish red t-shirt.",
-      "price": 19.99,
-      "quantity": 10,
-      "image": "/images/img-book-1.png"
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png",
+      "sale": false
     },
     {
       "id": 2,
-      "name": "Blue Hoodie",
-      "description": "A warm and cozy blue hoodie for chilly days.",
-      "price": 39.99,
-      "quantity": 5,
-      "image": "/images/2.jpg"
+      "name": "A Lily in the Light",
+      "description": "For eleven-year-old Esme, ballet is everything—until her four-year-old sister, Lily, vanishes without a trace and nothing is certain anymore. People Esme has known her whole life suddenly become suspects, each new one hitting closer to home than the last.Unable to cope, Esme escapes the nightmare that is her new reality when she receives an invitation to join an elite ballet academy in San Francisco. Desperate to leave behind her chaotic, broken family and the mystery surrounding Lily's disappearance, Esme accepts.",
+      "price": 14.99,
+      "year_published": 2018,
+      "pages": 251,
+      "language": "English",
+      "author": "Kristin Fields",
+      "categories": ["Biography"],
+      "image": "/images/img-book-2.png",
+      "sale": true
     },
     {
       "id": 3,
-      "name": "Leather Jacket",
-      "description": "A sleek and stylish black leather jacket.",
-      "price": 99.99,
-      "quantity": 2,
-      "image": "/images/3.jpg"
+      "name": "A Woman Is No Man: A Novel",
+      "description": "Where I come from, we've learned to silence ourselves. We've been taught that silence will save us. Where I come from, we keep these stories to ourselves. To tell them to the outside world is unheard of—dangerous, the ultimate shame.",
+      "price": 15.00,
+      "year_published": 2001,
+      "pages": 230,
+      "language": "English",
+      "author": "Etaf Rum",
+      "categories": ["Biography","Drama"],
+      "image": "/images/img-book-3.png",
+      "sale": true
     },
     {
       "id": 4,
-      "name": "Denim Shorts",
-      "description": "Comfortable and stylish denim shorts for warm weather.",
-      "price": 29.99,
-      "quantity": 8,
-      "image": "/images/4.png"
+      "name": "Becoming",
+      "description": "In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and compelling women of our era. As First Lady of the United States of America, the first African-American to serve in that role, she helped create the most welcoming and inclusive White House in history, while also establishing herself as a powerful advocate for women and girls in the U.S. and around the world.",
+      "price": 14.95,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Michelle Obama",
+      "categories": ["Biography"],
+      "image": "/images/img-book-4.png"
     },
     {
       "id": 5,
-      "name": "Black Dress",
-      "description": "A classic black dress for any occasion.",
-      "price": 59.99,
-      "quantity": 4,
-      "image": "/images/5.jpg"
+      "name": "Born a Crime: Stories from a South African Childhood",
+      "description": "Trevor Noah's unlikely path from apartheid South Africa to the desk of The Daily Show began with a criminal act: his birth. Trevor was born to a white Swiss father and a black Xhosa mother at a time when such a union was punishable by five years in prison. Living proof of his parents' indiscretion, Trevor was kept mostly indoors for the earliest years of his life, bound by the extreme and often absurd measures his mother took to hide him from a government that could, at any moment, steal him away. Finally liberated by the end of South Africa's tyrannical white rule, Trevor and his mother set forth on a grand adventure, living openly and freely and embracing the opportunities won by a centuries-long struggle.",
+      "price": 13.49,
+      "year_published": 2019,
+      "pages": 316,
+      "language": "English",
+      "author": "Trevor Noah",
+      "categories": ["Biography",],
+      "image": "/images/img-book-5.png"
     },
     {
-      "id": 6,
-      "name": "White Sneakers",
-      "description": "A pair of stylish white sneakers for casual wear.",
-      "price": 49.99,
-      "quantity": 12,
-      "image": "/images/6.jpg"
+      "id": 1,
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png"
     },
     {
-      "id": 7,
-      "name": "Gray Sweatpants",
-      "description": "Comfortable and stylish gray sweatpants for lounging.",
-      "price": 24.99,
-      "quantity": 6,
-      "image": "/images/7.jpg"
+      "id": 1,
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png"
     },
     {
-      "id": 8,
-      "name": "Brown Leather Boots",
-      "description": "A pair of rugged brown leather boots for outdoor adventures.",
-      "price": 129.99,
-      "quantity": 3,
-      "image": "/images/8.jpg"
+      "id": 1,
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png"
     },
     {
-      "id": 9,
-      "name": "Yellow Raincoat",
-      "description": "A bright yellow raincoat for rainy days.",
-      "price": 59.99,
-      "quantity": 7,
-      "image": "/images/9.jpg"
+      "id": 1,
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png"
     },
     {
-      "id": 10,
-      "name": "Green Skirt",
-      "description": "A flowy green skirt for a bohemian look.",
-      "price": 39.99,
-      "quantity": 9,
-      "image": "/images/10.jpg"
-    },
-    {
-      "id": 11,
-      "name": "Striped Polo",
-      "description": "A classic striped polo shirt for a preppy look.",
-      "price": 29.99,
-      "quantity": 11,
-      "image": "/images/11.jpg"
-    },
-    {
-      "id": 12,
-      "name": "Purple Sunglasses",
-      "description": "Stylish purple sunglasses to complete any outfit.",
-      "price": 19.99,
-      "quantity": 15,
-      "image": "/images/12.jpg"
+      "id": 1,
+      "name": "Blessing in Disguise: A Novel",
+      "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
+      "price": 13.99,
+      "year_published": 1994,
+      "pages": 256,
+      "language": "English",
+      "author": "Danielle Steel",
+      "categories": ["Fiction","Uncategorized"],
+      "image": "/images/img-book-1.png"
     }
   ],
   "comments": [{
