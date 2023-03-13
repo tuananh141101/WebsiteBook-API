@@ -378,17 +378,17 @@
       "sale": false
     },
     {
-      "id": 20,
-      "name": "Girl, Wash Your Face",
-      "description": "With painful honesty and fearless humor, Rachel unpacks and examines the falsehoods that once left her feeling overwhelmed and unworthy, and reveals the specific practical strategies that helped her move past them. In the process, she encourages, entertains, and even kicks a little butt, all to convince you to do whatever it takes to get real and become the joyous, confident woman you were meant to be.",
-      "price": 9.99,
+      "id": 30,
+      "name": "Fire and Fury: Inside the Trump White House",
+      "description": "With extraordinary access to the West Wing, Michael Wolff reveals what happened behind-the-scenes in the first nine months of the most controversial presidency of our time in Fire and Fury: Inside the Trump White House.",
+      "price": 14.90,
       "year_published": 2018,
-      "pages": 251,
+      "pages": 312,
       "language": "English",
-      "author": "Rachels Hollis",
+      "author": "Michael Wolf",
       "categories": ["Family"],
-      "image": "/images/img-book-20.png",
-      "sale": true
+      "image": "/images/img-book-30.png",
+      "sale": false
     }
   ],
   "comments": [{
