@@ -50,7 +50,7 @@
       "author": "Michelle Obama",
       "categories": ["Biography"],
       "image": "/images/img-book-4.png",
-      "sale": false
+      "sale": true
     },
     {
       "id": 5,
@@ -63,7 +63,7 @@
       "author": "Trevor Noah",
       "categories": ["Biography"],
       "image": "/images/img-book-5.png",
-      "sale": false
+      "sale": true
     },
     {
       "id": 6,
@@ -89,7 +89,7 @@
       "author": "Tara Westover",
       "categories": ["Biography"],
       "image": "/images/img-book-7.png",
-      "sale": false
+      "sale": true
     },
     {
       "id": 8,
