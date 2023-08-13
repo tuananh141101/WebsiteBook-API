@@ -417,7 +417,8 @@
       "sale": false
     }
   ],
-  "comments": [{
+  "comments": [
+    {
       "id": 1,
       "username": "john_smith",
       "text": "Great product, I would definitely recommend it to others!",
@@ -488,7 +489,8 @@
       "date": "2022-10-15"
     }
   ],
-  "posts": [{
+  "posts": [
+    {
       "id": 1,
       "title": "10 Ways to Boost Your Productivity",
       "author": "Sarah Johnson",
