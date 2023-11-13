@@ -525,5 +525,19 @@
       "content": "Strong relationships are key to happiness and success in life. In this post, we explore how to build strong relationships with family, friends, and coworkers, and why it's important to do so.",
       "date": "2022-05-01"
     }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "username": "ngtuananh@gmail.com",
+      "password": "14112001",
+      "role": "client"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "12345",
+      "role": "admin"
+    }
   ]
 }
