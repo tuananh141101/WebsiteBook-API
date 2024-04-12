@@ -11,7 +11,8 @@
       "author": "Danielle Steel",
       "categories": ["Fiction","Uncategorized"],
       "image": "/images/img-book-1.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "author": "Kristin Fields",
       "categories": ["Biography"],
       "image": "/images/img-book-2.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
       "author": "Etaf Rum",
       "categories": ["Biography","Drama"],
       "image": "/images/img-book-3.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 4,
@@ -50,7 +53,8 @@
       "author": "Michelle Obama",
       "categories": ["Biography"],
       "image": "/images/img-book-4.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 5,
@@ -63,7 +67,8 @@
       "author": "Trevor Noah",
       "categories": ["Biography"],
       "image": "/images/img-book-5.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
       "author": "Tomi Adeymi",
       "categories": ["Biography","Children's"],
       "image": "/images/img-book-6.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 7,
@@ -89,7 +95,8 @@
       "author": "Tara Westover",
       "categories": ["Biography"],
       "image": "/images/img-book-7.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 8,
@@ -102,7 +109,8 @@
       "author": "Camille Pagan",
       "categories": ["Biography","Children's"],
       "image": "/images/img-book-8.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 9,
@@ -115,7 +123,8 @@
       "author": "Ralph Ellison",
       "categories": ["Biography","Mystery"],
       "image": "/images/img-book-9.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 10,
@@ -128,7 +137,8 @@
       "author": "Maya Angelou",
       "categories": ["Biography","Family"],
       "image": "/images/img-book-10.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 11,
@@ -141,7 +151,8 @@
       "author": "Marlon James",
       "categories": ["Children's","Drama","Family"],
       "image": "/images/img-book-11.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 12,
@@ -154,7 +165,8 @@
       "author": "Nes Vizzini",
       "categories": ["Children's"],
       "image": "/images/img-book-12.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 13,
@@ -167,7 +179,8 @@
       "author": "Dr. Seuss",
       "categories": ["Children's"],
       "image": "/images/img-book-13.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 14,
@@ -180,7 +193,8 @@
       "author": "R. J. Palacio",
       "categories": ["Children's"],
       "image": "/images/img-book-14.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 15,
@@ -193,7 +207,8 @@
       "author": "Mark Hyman M.D",
       "categories": ["Cooking"],
       "image": "/images/img-book-15.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 16,
@@ -206,7 +221,8 @@
       "author": "Katie Parla",
       "categories": ["Cooking"],
       "image": "/images/img-book-16.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 17,
@@ -219,7 +235,8 @@
       "author": "Michael Pollan",
       "categories": ["Cooking","Politics"],
       "image": "/images/img-book-17.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 18,
@@ -232,7 +249,8 @@
       "author": "Danielle Steel",
       "categories": ["Drama","Fiction","Uncategorized"],
       "image": "/images/img-book-18.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 19,
@@ -245,7 +263,8 @@
       "author": "A. J. Finn",
       "categories": ["Drama","Mystery"],
       "image": "/images/img-book-19.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 20,
@@ -258,7 +277,8 @@
       "author": "Rachels Hollis",
       "categories": ["Family"],
       "image": "/images/img-book-20.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 21,
@@ -271,7 +291,8 @@
       "author": "Mark Manson",
       "categories": ["Family"],
       "image": "/images/img-book-21.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 22,
@@ -284,7 +305,8 @@
       "author": "Elliot Ackerman",
       "categories": ["Family"],
       "image": "/images/img-book-22.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 23,
@@ -297,8 +319,10 @@
       "author": "Jordan B. Peterson",
       "categories": ["Fiction","Politics"],
       "image": "/images/img-book-23.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
+
     {
       "id": 24,
       "name": "Before We Were Yours",
@@ -310,7 +334,8 @@
       "author": "Lisa Wingate",
       "categories": ["Family","History"],
       "image": "/images/img-book-24.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 25,
@@ -323,7 +348,8 @@
       "author": "Delia Owens",
       "categories": ["Fiction","Uncategorized"],
       "image": "/images/img-book-25.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 26,
@@ -336,7 +362,8 @@
       "author": "Peter Hellers",
       "categories": ["Fiction"],
       "image": "/images/img-book-26.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 27,
@@ -349,7 +376,8 @@
       "author": "James Holland",
       "categories": ["History"],
       "image": "/images/img-book-27.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 28,
@@ -362,7 +390,8 @@
       "author": "Patrick Radden Keefe",
       "categories": ["Biography","Mystery"],
       "image": "/images/img-book-28.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 29,
@@ -375,7 +404,8 @@
       "author": "Stephen Hawking",
       "categories": ["Mystery"],
       "image": "/images/img-book-29.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 30,
@@ -388,7 +418,8 @@
       "author": "Michael Wolf",
       "categories": ["Family"],
       "image": "/images/img-book-30.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     },
     {
       "id": 31,
@@ -401,7 +432,8 @@
       "author": "Susan Bernhard",
       "categories": ["Fiction","Uncategorized"],
       "image": "/images/img-book-31.png",
-      "sale": true
+      "sale": true,
+      "quantity": 1
     },
     {
       "id": 32,
@@ -414,7 +446,8 @@
       "author": "Ismail Kadare",
       "categories": ["History","Uncategorized"],
       "image": "/images/img-book-32.png",
-      "sale": false
+      "sale": false,
+      "quantity": 1
     }
   ],
   "comments": [
@@ -538,6 +571,48 @@
       "username": "admin",
       "password": "12345",
       "role": "admin"
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "image": "/images/img-blog-1.jpg",
+      "title": "I was paid $12,500 to write my book. Here’s why I’m revealing that",
+      "content": "The more we know about what other people earn, the more we can understand our own circumstances I was paid a $12,500 advance to write my book, Open Up. Sharing this publicly,…",
+      "date": "APRIL 4 ,2019",
+      "categories": ["NEWS"]
+    },
+    {
+      "id": 2,
+      "image": "/images/img-blog-2.jpg",
+      "title": "Should You Feel Embarrassed for Reading Kids Books?",
+      "content": "Read whatever you want. But you should feel embarrassed when what you’re reading was written for children. Reprehenderit tempor aliquip dolor eiusmod nostrud quis ipsum qui aliquip nostrud tempor aute tempor commodo.…",
+      "date": "APRIL 4 ,2019",
+      "categories": ["NEWS","OPINION"]
+    },
+    {
+      "id": 3,
+      "image": "/images/img-blog-3.jpg",
+      "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
+      "content": "For Lawrence Ferlinghetti, living to be 100 is no fun. Speaking from his home in San Francisco recently, Ferlinghetti said he's practically blind now — he can't read, and he's skipping his…",
+      "date": "MARCH 4 ,2023",
+      "categories": ["OPINION"]
+    },
+    {
+      "id": 4,
+      "image": "/images/img-blog-4.jpg",
+      "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
+      "content": "As the holiday shopping season swings into full force, it’s interesting to watch people buying books. Many a wish list has everything from the latest by Stephen King to an Amazon Gift Card…",
+      "date": "DEC 14, 2023",
+      "categories": ["NEWS"]
+    },
+    {
+      "id": 5,
+      "images": "/images/img-blog-5.jpg",
+      "title": "A New Restaurant & Bookshop Opens in Raleigh",
+      "content": "Brewery Bhavana, a restaurant in downtown Raleigh offering craft beer and dim sum, plus a flower shop and bookstore, opened last Wednesday, the News & Observer reported, noting that the bookshop and floral shop inside…",
+      "date": "NOV 14, 2023",
+      "categories": ["NEWS"]
     }
   ]
 }
