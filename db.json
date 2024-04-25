@@ -4,12 +4,14 @@
       "id": 1,
       "name": "Blessing in Disguise: A Novel",
       "description": "As a young intern at an art gallery in Paris, Isabelle McAvoy meets Putnam Armstrong, wealthy, gentle, older, and secluded from the world. Isabelle's relationship with Putnam, and her time at his château on the Normandy coast, are the stuff of dreams. But it turns real when she becomes pregnant, for she knows that marriage is out of the question.",
-      "price": 13.99,
+      "price": "14.11",
       "yearpublished": 1994,
-      "pages": 256,
       "language": "English",
       "author": "Danielle Steel",
-      "categories": ["Fiction","Uncategorized"],
+      "categories": [
+        "Fiction",
+        "Uncategorized"
+      ],
       "image": "/images/img-book-1.png",
       "sale": false,
       "quantity": 1
@@ -23,7 +25,9 @@
       "pages": 251,
       "language": "English",
       "author": "Kristin Fields",
-      "categories": ["Biography"],
+      "categories": [
+        "Biography"
+      ],
       "image": "/images/img-book-2.png",
       "sale": true,
       "quantity": 1
@@ -32,12 +36,15 @@
       "id": 3,
       "name": "A Woman Is No Man: A Novel",
       "description": "Where I come from, we've learned to silence ourselves. We've been taught that silence will save us. Where I come from, we keep these stories to ourselves. To tell them to the outside world is unheard of—dangerous, the ultimate shame.",
-      "price": 15.00,
+      "price": 15,
       "yearpublished": 2001,
       "pages": 230,
       "language": "English",
       "author": "Etaf Rum",
-      "categories": ["Biography","Drama"],
+      "categories": [
+        "Biography",
+        "Drama"
+      ],
       "image": "/images/img-book-3.png",
       "sale": true,
       "quantity": 1
@@ -51,7 +58,9 @@
       "pages": 256,
       "language": "English",
       "author": "Michelle Obama",
-      "categories": ["Biography"],
+      "categories": [
+        "Biography"
+      ],
       "image": "/images/img-book-4.png",
       "sale": true,
       "quantity": 1
@@ -65,7 +74,9 @@
       "pages": 316,
       "language": "English",
       "author": "Trevor Noah",
-      "categories": ["Biography"],
+      "categories": [
+        "Biography"
+      ],
       "image": "/images/img-book-5.png",
       "sale": true,
       "quantity": 1
@@ -79,7 +90,10 @@
       "pages": 554,
       "language": "English",
       "author": "Tomi Adeymi",
-      "categories": ["Biography","Children's"],
+      "categories": [
+        "Biography",
+        "Children's"
+      ],
       "image": "/images/img-book-6.png",
       "sale": true,
       "quantity": 1
@@ -93,7 +107,9 @@
       "pages": 400,
       "language": "English",
       "author": "Tara Westover",
-      "categories": ["Biography"],
+      "categories": [
+        "Biography"
+      ],
       "image": "/images/img-book-7.png",
       "sale": true,
       "quantity": 1
@@ -107,7 +123,10 @@
       "pages": 270,
       "language": "English",
       "author": "Camille Pagan",
-      "categories": ["Biography","Children's"],
+      "categories": [
+        "Biography",
+        "Children's"
+      ],
       "image": "/images/img-book-8.png",
       "sale": false,
       "quantity": 1
@@ -121,7 +140,10 @@
       "pages": 251,
       "language": "English",
       "author": "Ralph Ellison",
-      "categories": ["Biography","Mystery"],
+      "categories": [
+        "Biography",
+        "Mystery"
+      ],
       "image": "/images/img-book-9.png",
       "sale": false,
       "quantity": 1
@@ -135,7 +157,10 @@
       "pages": 300,
       "language": "English",
       "author": "Maya Angelou",
-      "categories": ["Biography","Family"],
+      "categories": [
+        "Biography",
+        "Family"
+      ],
       "image": "/images/img-book-10.png",
       "sale": false,
       "quantity": 1
@@ -144,12 +169,16 @@
       "id": 11,
       "name": "Black Leopard, Red Wolf (The Dark Star Trilogy)",
       "description": "Tracker is known far and wide for his skills as a hunter: “He has a nose,” people say. Engaged to track down a mysterious boy who disappeared three years earlier, Tracker breaks his own rule of always working alone when he finds himself part of a group that comes together to search for the boy. The band is a hodgepodge, full of unusual characters with secrets of their own, including a shape-shifting man-animal known as Leopard.",
-      "price": 17.00,
+      "price": 17,
       "yearpublished": 2019,
       "pages": 640,
       "language": "English",
       "author": "Marlon James",
-      "categories": ["Children's","Drama","Family"],
+      "categories": [
+        "Children's",
+        "Drama",
+        "Family"
+      ],
       "image": "/images/img-book-11.png",
       "sale": false,
       "quantity": 1
@@ -163,7 +192,9 @@
       "pages": 240,
       "language": "English",
       "author": "Nes Vizzini",
-      "categories": ["Children's"],
+      "categories": [
+        "Children's"
+      ],
       "image": "/images/img-book-12.png",
       "sale": false,
       "quantity": 1
@@ -177,7 +208,9 @@
       "pages": 197,
       "language": "English",
       "author": "Dr. Seuss",
-      "categories": ["Children's"],
+      "categories": [
+        "Children's"
+      ],
       "image": "/images/img-book-13.png",
       "sale": false,
       "quantity": 1
@@ -191,7 +224,9 @@
       "pages": 334,
       "language": "English",
       "author": "R. J. Palacio",
-      "categories": ["Children's"],
+      "categories": [
+        "Children's"
+      ],
       "image": "/images/img-book-14.png",
       "sale": false,
       "quantity": 1
@@ -205,7 +240,9 @@
       "pages": 400,
       "language": "English",
       "author": "Mark Hyman M.D",
-      "categories": ["Cooking"],
+      "categories": [
+        "Cooking"
+      ],
       "image": "/images/img-book-15.png",
       "sale": false,
       "quantity": 1
@@ -214,12 +251,14 @@
       "id": 16,
       "name": "Food of the Italian South",
       "description": "In most cultures, exploring food means exploring history—and the Italian south has plenty of both to offer. The pasta-heavy, tomato-forward “Italian food” the world knows and loves does not actually represent the entire country; rather, these beloved and widespread culinary traditions hail from the regional cuisines of the south. Acclaimed author and food journalist Katie Parla takes you on a tour through these vibrant destinations so you can sink your teeth into the secrets of their rustic, romantic dishes.",
-      "price": 18.00,
+      "price": 18,
       "yearpublished": 2000,
       "pages": 299,
       "language": "English",
       "author": "Katie Parla",
-      "categories": ["Cooking"],
+      "categories": [
+        "Cooking"
+      ],
       "image": "/images/img-book-16.png",
       "sale": false,
       "quantity": 1
@@ -233,7 +272,10 @@
       "pages": 480,
       "language": "English",
       "author": "Michael Pollan",
-      "categories": ["Cooking","Politics"],
+      "categories": [
+        "Cooking",
+        "Politics"
+      ],
       "image": "/images/img-book-17.png",
       "sale": false,
       "quantity": 1
@@ -242,12 +284,16 @@
       "id": 18,
       "name": "Bundle Collection: Danielle Steel",
       "description": "Paige Watts is the ultimate stage mother. The daughter of Hollywood royalty, Paige channels her acting dreams into making her own daughter, Emma, a star. By the age of nine, Emma is playing a central role in a hit TV show. Then everything is shattered by unforeseeable tragedy.",
-      "price": 31.00,
+      "price": 31,
       "yearpublished": 2018,
       "pages": 300,
       "language": "English",
       "author": "Danielle Steel",
-      "categories": ["Drama","Fiction","Uncategorized"],
+      "categories": [
+        "Drama",
+        "Fiction",
+        "Uncategorized"
+      ],
       "image": "/images/img-book-18.png",
       "sale": true,
       "quantity": 1
@@ -256,12 +302,15 @@
       "id": 19,
       "name": "The Woman in the Window",
       "description": "For readers of Gillian Flynn and Tana French comes one of the decade's most anticipated debuts, published in forty-one languages around the world and in development as a major film from Fox: a twisty, powerful Hitchcockian thriller about an agoraphobic woman who believes she witnessed a crime in a neighboring house.",
-      "price": 15.00,
+      "price": 15,
       "yearpublished": 2018,
       "pages": 448,
       "language": "English",
       "author": "A. J. Finn",
-      "categories": ["Drama","Mystery"],
+      "categories": [
+        "Drama",
+        "Mystery"
+      ],
       "image": "/images/img-book-19.png",
       "sale": false,
       "quantity": 1
@@ -275,7 +324,9 @@
       "pages": 251,
       "language": "English",
       "author": "Rachels Hollis",
-      "categories": ["Family"],
+      "categories": [
+        "Family"
+      ],
       "image": "/images/img-book-20.png",
       "sale": true,
       "quantity": 1
@@ -289,7 +340,9 @@
       "pages": 212,
       "language": "English",
       "author": "Mark Manson",
-      "categories": ["Family"],
+      "categories": [
+        "Family"
+      ],
       "image": "/images/img-book-21.png",
       "sale": false,
       "quantity": 1
@@ -303,7 +356,9 @@
       "pages": 192,
       "language": "English",
       "author": "Elliot Ackerman",
-      "categories": ["Family"],
+      "categories": [
+        "Family"
+      ],
       "image": "/images/img-book-22.png",
       "sale": false,
       "quantity": 1
@@ -317,12 +372,14 @@
       "pages": 250,
       "language": "English",
       "author": "Jordan B. Peterson",
-      "categories": ["Fiction","Politics"],
+      "categories": [
+        "Fiction",
+        "Politics"
+      ],
       "image": "/images/img-book-23.png",
       "sale": true,
       "quantity": 1
     },
-
     {
       "id": 24,
       "name": "Before We Were Yours",
@@ -332,7 +389,10 @@
       "pages": 480,
       "language": "English",
       "author": "Lisa Wingate",
-      "categories": ["Family","History"],
+      "categories": [
+        "Family",
+        "History"
+      ],
       "image": "/images/img-book-24.png",
       "sale": true,
       "quantity": 1
@@ -341,12 +401,15 @@
       "id": 25,
       "name": "Where the Crawdads Sing",
       "description": "For years, rumors of the “Marsh Girl” have haunted Barkley Cove, a quiet town on the North Carolina coast. So in late 1969, when handsome Chase Andrews is found dead, the locals immediately suspect Kya Clark, the so-called Marsh Girl.",
-      "price": 16.20,
+      "price": 16.2,
       "yearpublished": 2018,
       "pages": 448,
       "language": "English",
       "author": "Delia Owens",
-      "categories": ["Fiction","Uncategorized"],
+      "categories": [
+        "Fiction",
+        "Uncategorized"
+      ],
       "image": "/images/img-book-25.png",
       "sale": false,
       "quantity": 1
@@ -360,7 +423,9 @@
       "pages": 250,
       "language": "English",
       "author": "Peter Hellers",
-      "categories": ["Fiction"],
+      "categories": [
+        "Fiction"
+      ],
       "image": "/images/img-book-26.png",
       "sale": true,
       "quantity": 1
@@ -369,12 +434,14 @@
       "id": 27,
       "name": "Big Week: The Biggest Air Battle of World War II",
       "description": "During the third week of February 1944, the combined Allied air forces based in Britain and Italy launched their first round-the-clock bomber offensive against Germany. Their goal: to smash the main factories and production centers of the Luftwaffe while also drawing German planes into an aerial battle of attrition to neutralize the Luftwaffe as a fighting force prior to the cross-channel invasion, planned for a few months later. Officially called Operation ARGUMENT, this aerial offensive quickly became known as “Big Week,” and it was one of the turning-point engagements of World War II.",
-      "price": 18.30,
+      "price": 18.3,
       "yearpublished": 2000,
       "pages": 400,
       "language": "English",
       "author": "James Holland",
-      "categories": ["History"],
+      "categories": [
+        "History"
+      ],
       "image": "/images/img-book-27.png",
       "sale": false,
       "quantity": 1
@@ -388,7 +455,10 @@
       "pages": 464,
       "language": "English",
       "author": "Patrick Radden Keefe",
-      "categories": ["Biography","Mystery"],
+      "categories": [
+        "Biography",
+        "Mystery"
+      ],
       "image": "/images/img-book-28.png",
       "sale": false,
       "quantity": 1
@@ -402,7 +472,9 @@
       "pages": 221,
       "language": "English",
       "author": "Stephen Hawking",
-      "categories": ["Mystery"],
+      "categories": [
+        "Mystery"
+      ],
       "image": "/images/img-book-29.png",
       "sale": false,
       "quantity": 1
@@ -411,12 +483,14 @@
       "id": 30,
       "name": "Fire and Fury: Inside the Trump White House",
       "description": "With extraordinary access to the West Wing, Michael Wolff reveals what happened behind-the-scenes in the first nine months of the most controversial presidency of our time in Fire and Fury: Inside the Trump White House.",
-      "price": 14.90,
+      "price": 14.9,
       "yearpublished": 2018,
       "pages": 312,
       "language": "English",
       "author": "Michael Wolf",
-      "categories": ["Family"],
+      "categories": [
+        "Family"
+      ],
       "image": "/images/img-book-30.png",
       "sale": false,
       "quantity": 1
@@ -425,12 +499,15 @@
       "id": 31,
       "name": "Winter Loon: A Novel",
       "description": "Abandoned by his father after his mother drowns in a frozen Minnesota lake, fifteen-year-old Wes Ballot is stranded with coldhearted grandparents and holed up in his mother's old bedroom, surrounded by her remnants and memories. As the wait for his father stretches unforgivably into months, a local girl, whose own mother died a brutal death, captures his heart and imagination, giving Wes fresh air to breathe in the suffocating small town.",
-      "price": 11.00,
+      "price": 11,
       "yearpublished": 2018,
       "pages": 350,
       "language": "English",
       "author": "Susan Bernhard",
-      "categories": ["Fiction","Uncategorized"],
+      "categories": [
+        "Fiction",
+        "Uncategorized"
+      ],
       "image": "/images/img-book-31.png",
       "sale": true,
       "quantity": 1
@@ -444,7 +521,10 @@
       "pages": 400,
       "language": "English",
       "author": "Ismail Kadare",
-      "categories": ["History","Uncategorized"],
+      "categories": [
+        "History",
+        "Uncategorized"
+      ],
       "image": "/images/img-book-32.png",
       "sale": false,
       "quantity": 1
@@ -576,43 +656,49 @@
   "blog": [
     {
       "id": 1,
-      "image": "/images/img-blog-1.jpg",
       "title": "I was paid $12,500 to write my book. Here’s why I’m revealing that",
       "content": "The more we know about what other people earn, the more we can understand our own circumstances I was paid a $12,500 advance to write my book, Open Up. Sharing this publicly,…",
       "date": "APRIL 4 ,2019",
-      "categories": ["NEWS"]
+      "categories": [
+        "NEWS"
+      ]
     },
     {
       "id": 2,
-      "image": "/images/img-blog-2.jpg",
       "title": "Should You Feel Embarrassed for Reading Kids Books?",
       "content": "Read whatever you want. But you should feel embarrassed when what you’re reading was written for children. Reprehenderit tempor aliquip dolor eiusmod nostrud quis ipsum qui aliquip nostrud tempor aute tempor commodo.…",
       "date": "APRIL 4 ,2019",
-      "categories": ["NEWS","OPINION"]
+      "categories": [
+        "NEWS",
+        "OPINION"
+      ]
     },
     {
       "id": 3,
-      "image": "/images/img-blog-3.jpg",
       "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
       "content": "For Lawrence Ferlinghetti, living to be 100 is no fun. Speaking from his home in San Francisco recently, Ferlinghetti said he's practically blind now — he can't read, and he's skipping his…",
       "date": "MARCH 4 ,2023",
-      "categories": ["OPINION"]
+      "categories": [
+        "OPINION"
+      ]
     },
     {
       "id": 4,
-      "image": "/images/img-blog-4.jpg",
       "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
       "content": "As the holiday shopping season swings into full force, it’s interesting to watch people buying books. Many a wish list has everything from the latest by Stephen King to an Amazon Gift Card…",
       "date": "DEC 14, 2023",
-      "categories": ["NEWS"]
+      "categories": [
+        "NEWS"
+      ]
     },
     {
       "id": 5,
-      "images": "/images/img-blog-5.jpg",
       "title": "A New Restaurant & Bookshop Opens in Raleigh",
       "content": "Brewery Bhavana, a restaurant in downtown Raleigh offering craft beer and dim sum, plus a flower shop and bookstore, opened last Wednesday, the News & Observer reported, noting that the bookshop and floral shop inside…",
       "date": "NOV 14, 2023",
-      "categories": ["NEWS"]
+      "categories": [
+        "NEWS"
+      ]
     }
   ]
 }
