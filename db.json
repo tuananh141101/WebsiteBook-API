@@ -708,5 +708,37 @@
       "date": "qwwe",
       "categories": "qwe"
     }
-  ]
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "fiction",
+      "image": "/images/fction_icon.webp"
+    },
+    {
+      "id": 2,
+      "name": "history",
+      "image": "/images/history_icon.webp"
+    },
+    {
+      "id": 3,
+      "name": "mystery",
+      "image": "/images/mistery_icon.webp"
+    },
+    {
+      "id": 4,
+      "name": "family",
+      "image": "/images/family_icon.webp"
+    },
+    {
+      "id": 5,
+      "name": "cooking",
+      "image": "/images/cooking_icon.webp"
+    },
+    {
+      "id": 6,
+      "name": "drama",
+      "image": "/images/drama_icon.webp"
+    }
+  ] 
 }
