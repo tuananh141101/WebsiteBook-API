@@ -713,7 +713,7 @@
     {
       "id": 1,
       "name": "fiction",
-      "image": "/images/fction_icon.webp"
+      "image": "/images/fiction_icon.webp"
     },
     {
       "id": 2,
@@ -723,7 +723,7 @@
     {
       "id": 3,
       "name": "mystery",
-      "image": "/images/mistery_icon.webp"
+      "image": "/images/mystery_icon.webp"
     },
     {
       "id": 4,
