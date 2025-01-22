@@ -658,6 +658,7 @@
     {
       "id": 1,
       "title": "I was paid $12,500 to write my book. Here’s why I’m revealing that",
+      "image": "/public/images/img-blog-1.jpg",
       "content": "The more we know about what other people earn, the more we can understand our own circumstances I was paid a $12,500 advance to write my book, Open Up. Sharing this publicly,…",
       "date": "APRIL 4 ,2019",
       "categories": [
@@ -667,6 +668,7 @@
     {
       "id": 2,
       "title": "Should You Feel Embarrassed for Reading Kids Books?",
+      "image": "/public/images/img-blog-2.jpg",
       "content": "Read whatever you want. But you should feel embarrassed when what you’re reading was written for children. Reprehenderit tempor aliquip dolor eiusmod nostrud quis ipsum qui aliquip nostrud tempor aute tempor commodo.…",
       "date": "APRIL 4 ,2019",
       "categories": [
@@ -677,6 +679,7 @@
     {
       "id": 3,
       "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
+      "image": "/public/images/img-blog-3.jpg",
       "content": "For Lawrence Ferlinghetti, living to be 100 is no fun. Speaking from his home in San Francisco recently, Ferlinghetti said he's practically blind now — he can't read, and he's skipping his…",
       "date": "MARCH 4 ,2023",
       "categories": [
@@ -686,6 +689,7 @@
     {
       "id": 4,
       "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
+      "image": "/public/images/img-blog-4.jpg",
       "content": "As the holiday shopping season swings into full force, it’s interesting to watch people buying books. Many a wish list has everything from the latest by Stephen King to an Amazon Gift Card…",
       "date": "DEC 14, 2023",
       "categories": [
@@ -695,18 +699,12 @@
     {
       "id": 5,
       "title": "A New Restaurant & Bookshop Opens in Raleigh",
+      "image": "/public/images/img-blog-5.jpg",
       "content": "Brewery Bhavana, a restaurant in downtown Raleigh offering craft beer and dim sum, plus a flower shop and bookstore, opened last Wednesday, the News & Observer reported, noting that the bookshop and floral shop inside…",
       "date": "NOV 14, 2023",
       "categories": [
         "NEWS"
       ]
-    },
-    {
-      "id": "6",
-      "title": "qwe",
-      "content": "qwe",
-      "date": "qwwe",
-      "categories": "qwe"
     }
   ],
   "categories": [
