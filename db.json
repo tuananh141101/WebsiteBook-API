@@ -657,53 +657,398 @@
   "blog": [
     {
       "id": 1,
-      "title": "I was paid $12,500 to write my book. Here’s why I’m revealing that",
-      "image": "/public/images/img-blog-1.jpg",
-      "content": "The more we know about what other people earn, the more we can understand our own circumstances I was paid a $12,500 advance to write my book, Open Up. Sharing this publicly,…",
-      "date": "APRIL 4 ,2019",
+      "title": "Creative Ways to Incorporate Books into Your Home",
+      "image": "/public/images/img_blog_1.webp",
+      "content": "Books have a unique ability to transport us to different worlds, evoke emotions, and expand our knowledge. If you’re a book lover, you might find yourself accumulating more and more books over the years. So, how can you incorporate these literary treasures into your home in creative and aesthetically pleasing ways? In this blog post, we’ll explore various ideas to turn your home into a book lover’s paradise.",
+      "date": "November 8, 2023",
       "categories": [
         "NEWS"
+      ],
+      "section": [
+        {
+          "title": "1. Create a Home Library",
+          "img": "",
+          "description": "A dedicated home library is a dream come true for many book enthusiasts. It’s a place where you can retreat into the world of words and stories. Here’s how to set up your own cozy library space:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "Choose the Right Location",
+              "text": "Select a room or corner in your home that’s quiet and well-lit. Natural light is ideal for reading, so a room with large windows can be a great choice."
+            },
+            {
+              "id": 2,
+              "subTitle": "Bookshelves Galore",
+              "text": "Invest in bookshelves that not only hold your collection but also add an aesthetic touch to your space. Arrange your books by genre, author, or color for an organized and visually appealing display."
+            },
+            {
+              "id": 3,
+              "subTitle": "Comfortable Seating",
+              "text": "Include comfortable seating like plush armchairs, a cozy reading nook, or even a window seat. Make sure you have good lighting, such as adjustable floor lamps, for reading comfortably."
+            }
+          ]
+        },
+        {
+          "title": "2. Book-Themed Decor",
+          "img": "",
+          "description": "Incorporate your love for books into your home decor in subtle ways:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "Book-Stack Side Tables",
+              "text": "Use a stack of books as a creative side table in your living room or bedroom. Top it with a decorative tray to hold your drinks or a small plant."
+            },
+            {
+              "id": 2,
+              "subTitle": "Bookish Wall Art",
+              "text": "Hang book-themed artwork or posters on your walls. You can find artwork featuring famous book covers, quotes, or illustrations from your favorite novels."
+            },
+            {
+              "id": 3,
+              "subTitle": "Bookish Candles",
+              "text": "Candles with book-inspired scents, such as “Old Leather” or “Library,” can add a cozy ambiance to your home. Place them strategically throughout your space."
+            }
+          ]
+        },
+        {
+          "title": "3. Floating Bookshelves",
+          "img": "",
+          "description": "Create a whimsical and gravity-defying display with floating bookshelves. These shelves make it appear as if your books are magically suspended in the air."
+        },
+        {
+          "title": "4. Hidden Book Storage",
+          "img": "/public/images/img_content_4_blog_1.webp",
+          "description": "For a touch of mystery and intrigue, consider incorporating hidden book storage:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "Concealed Bookcase Door",
+              "text": "Install a bookcase door that leads to a secret room or storage space. It’s a fun and functional addition to your home."
+            },
+            {
+              "id": 2,
+              "subTitle": "Bookish Wall Art",
+              "text": "Hang book-themed artwork or posters on your walls. You can find artwork featuring famous book covers, quotes, or illustrations from your favorite novels."
+            },
+            {
+              "id": 3,
+              "subTitle": "Bookish Candles",
+              "text": "Candles with book-inspired scents, such as “Old Leather” or “Library,” can add a cozy ambiance to your home. Place them strategically throughout your space."
+            }
+          ]
+        },
+        {
+          "title": "5. Bookish Bedroom",
+          "img": "",
+          "description": "Your love for books can extend to your bedroom decor as well:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "Book Headboard",
+              "text": "Create a headboard made of books to make a statement in your bedroom. You can stack them horizontally or vertically, depending on your preference."
+            },
+            {
+              "id": 2,
+              "subTitle": "Literary Bedding",
+              "text": "Choose bed linens with book-themed prints or quotes. You’ll feel like you’re sleeping in a library every night."
+            }
+          ]
+        },
+        {
+          "title": "6. DIY Book Projects",
+          "img": "/public/images/img_content_6_blog_1.webp",
+          "description": "Get crafty and use your books to create unique decor items:",
+          "content": [
+            {
+              "id": "1",
+              "subTitle": "Book Planter",
+              "text": "Turn an old hardcover book into a planter by cutting out the pages and planting small succulents inside. It’s a charming addition to your home."
+            },
+            {
+              "id": "2",
+              "subTitle": "Book Clockt",
+              "text": "Convert a book into a stylish clock by adding a clock mechanism to the cover. It’s a functional piece of art for your wall.."
+            },
+            {
+              "subTitle": "Bookish Candles",
+              "text": "Candles with book-inspired scents, such as “Old Leather” or “Library,” can add a cozy ambiance to your home. Place them strategically throughout your space."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 2,
-      "title": "Should You Feel Embarrassed for Reading Kids Books?",
-      "image": "/public/images/img-blog-2.jpg",
-      "content": "Read whatever you want. But you should feel embarrassed when what you’re reading was written for children. Reprehenderit tempor aliquip dolor eiusmod nostrud quis ipsum qui aliquip nostrud tempor aute tempor commodo.…",
-      "date": "APRIL 4 ,2019",
+      "title": "Why Do Old Books Have That Unique Scent?",
+      "image": "/public/images/img_blog_1.webp",
+      "content": "Old books have a distinct aroma that’s instantly recognizable to any book lover. That enchanting scent is a blend of nostalgia and history, but have you ever wondered why old books smell the way they do? In this post, we’ll delve into the science and history behind that unique fragrance.",
       "categories": [
-        "NEWS",
-        "OPINION"
+        "NEWS"
+      ],
+      "section": [
+        {
+          "id": 1,
+          "title": "The Chemistry of an Old Book’s Scent",
+          "img": "/public/images/img_content_1_blog_2.webp",
+          "description": "The captivating scent of old books can be attributed to a combination of factors, including the aging of paper, ink, and binding materials1. Here’s a closer look at the chemistry behind it:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "1. Paper Aging",
+              "text": " Over time, the cellulose in paper breaks down, releasing volatile organic compounds. These compounds, such as furfural and vanillin, contribute to the distinct smell2."
+            },
+            {
+              "id": 2,
+              "subTitle": "2. Ink and Glues",
+              "text": "The ink used in older books and the glues holding them together also break down, adding their scents to the mix3."
+            },
+            {
+              "id": 3,
+              "subTitle": "3. Environmental Factors",
+              "text": "The environment in which a book is stored plays a significant role. Moisture, temperature, and exposure to light can all affect the rate at which these compounds are released."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Historical Significance",
+          "img": "",
+          "description": "The smell of old books has a long and storied history, connecting us with our literary heritage. When you open an aged tome, you’re essentially inhaling a piece of history, as many of these books have witnessed centuries of existence."
+        },
+        {
+          "id": 3,
+          "title": "The Scent of Libraries",
+          "img": "",
+          "description": "Libraries, with their vast collections of old books, have their own unique aroma. The “library smell” is a complex combination of the fragrances of countless books, wooden shelves, and aged leather upholstery. It’s a scent that bookworms find intoxicating."
+        },
+        {
+          "id": 4,
+          "title": "How to Preserve the Old Book Smell",
+          "img": "/public/images/img_content_4_blog_1.webp",
+          "description": "If you own a collection of old books or want to preserve the scent of new ones, consider these tips:",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "1. Proper Storage",
+              "text": "Store your books in a cool, dry place away from direct sunlight. This can slow down the breakdown of paper and ink."
+            },
+            {
+              "id": 2,
+              "subTitle": "2. Ventilation",
+              "text": "Allow for proper air circulation in your book storage area to prevent the buildup of musty odors."
+            },
+            {
+              "id": 3,
+              "subTitle": "3. Book Cleaning",
+              "text": "Gently clean your books to remove dust and dirt that can contribute to undesirable smells."
+            },
+            {
+              "id": 4,
+              "subTitle": "4. Airing",
+              "text": "Periodically air out your books by fanning their pages, bringing the scent back to life."
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "The Emotional Connection",
+          "img": "",
+          "description": "The aroma of old books isn’t just a chemical reaction; it’s also an emotional experience. For many, it’s a trip down memory lane, evoking childhood memories of libraries and the joy of reading."
+        },
+        {
+          "id": 6,
+          "title": "The Nostalgia Factor",
+          "img": "",
+          "description": "The scent of old books can trigger feelings of nostalgia, reminding us of the stories that have shaped our lives and the adventures we’ve embarked upon through reading."
+        },
+        {
+          "id": 7,
+          "title": "Conclusion",
+          "img": "",
+          "description": "The unique scent of old books is a complex blend of chemistry, history, and emotion. It’s a fragrance that book lovers hold dear, as it connects us to the literary treasures of the past and the stories that have touched countless lives. So, the next time you pick up an old book, take a moment to savor that distinctive scent and appreciate the rich tapestry of history it represents."
+        }
       ]
     },
     {
       "id": 3,
-      "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
-      "image": "/public/images/img-blog-3.jpg",
-      "content": "For Lawrence Ferlinghetti, living to be 100 is no fun. Speaking from his home in San Francisco recently, Ferlinghetti said he's practically blind now — he can't read, and he's skipping his…",
-      "date": "MARCH 4 ,2023",
+      "title": "Beyond Reading, Exploring Bookbinding and More",
+      "date": "October 5, 2023",
+      "image": "/public/images/img_blog_3.webp",
+      "content": "Books are more than just the stories they contain; they are physical works of art and craftsmanship. Bookbinding, the art of creating and restoring books, is a world of creativity and tradition waiting to be explored. In this post, we’ll dive into the fascinating world of bookbinding and discover the beauty beyond reading.",
       "categories": [
-        "OPINION"
+        "NEWS"
+      ],
+      "section": [
+        {
+          "id": 1,
+          "title": "History in Your Hands",
+          "description": "Bookbinding is an age-old craft with a rich history that dates back to ancient civilizations. The way a book is bound can reveal insights into the time and place it was created. The evolution of bookbinding techniques reflects the changing technologies and aesthetics of different eras."
+        },
+        {
+          "id": 2,
+          "title": "A Symphony of Materials",
+          "img": "",
+          "description": "Bookbinding is a marriage of materials, combining paper, leather, fabric, and threads into a harmonious whole. Skilled artisans select materials for their strength, durability, and aesthetic appeal. Each component plays a vital role in preserving the book for generations.",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "Coptic Binding:",
+              "text": "A method that allows books to lay flat when opened, perfect for sketchbooks and journals."
+            },
+            {
+              "id": 2,
+              "subTitle": "Japanese Stab Binding:",
+              "text": "A simple and beautiful technique that uses decorative stitching."
+            },
+            {
+              "id": 3,
+              "subTitle": "Sewn Boards Binding",
+              "text": "A style that incorporates wooden boards into the binding for added durability."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Bringing Books Back to Life",
+          "img": "",
+          "description": "Restoration is a labor of love for bookbinders. They breathe new life into damaged and aged books, ensuring that their stories continue to be shared with the world. A well-restored book is a testament to the dedication of its restorer."
+        },
+        {
+          "id": 4,
+          "title": "Challenges and Triumphs",
+          "description": "Restoration work often involves intricate repairs, page cleaning, and rebinding. Every book presents a unique set of challenges, making the process a constant journey of learning and problem-solving. It’s a laborious yet deeply rewarding endeavor."
+        },
+        {
+          "id": 5,
+          "title": "Preserving History",
+          "description": "By restoring books, bookbinders play a crucial role in preserving literary history. They save rare and antique books from deterioration, allowing future generations to experience the magic of the written word[^4]."
+        },
+        {
+          "id": 6,
+          "title": "Unleash Your Creativity",
+          "img": "",
+          "description": "You don’t need to be a professional bookbinder to explore this craft. DIY bookbinding is a rewarding hobby that lets you create personalized notebooks, journals, and scrapbooks. It’s a perfect blend of artistry and functionality."
+        },
+        {
+          "id": 7,
+          "title": "Online Resources",
+          "description": "There are plenty of online tutorials, forums, and communities where you can learn bookbinding techniques. Websites like Bookbinding Workshop and Instructables offer step-by-step instructions and inspiration for your projects."
+        }
       ]
     },
     {
       "id": 4,
-      "title": "A Lost 'Little Boy' Nears 100: Poet And Publisher Lawrence Ferlinghetti",
-      "image": "/public/images/img-blog-4.jpg",
-      "content": "As the holiday shopping season swings into full force, it’s interesting to watch people buying books. Many a wish list has everything from the latest by Stephen King to an Amazon Gift Card…",
-      "date": "DEC 14, 2023",
+      "title": "How to Support Your Local Bookstore",
+      "date": "September 1, 2023",
+      "image": "/public/images/img_blog_4.webp",
+      "content": "Local bookstores are more than just retail shops; they’re community hubs, treasure troves of knowledge, and places of inspiration. As they face challenges from online giants and chain stores, it’s crucial to support these literary sanctuaries. In this post, we’ll explore various ways to show your love for your local bookstore.",
       "categories": [
         "NEWS"
-      ]
-    },
-    {
-      "id": 5,
-      "title": "A New Restaurant & Bookshop Opens in Raleigh",
-      "image": "/public/images/img-blog-5.jpg",
-      "content": "Brewery Bhavana, a restaurant in downtown Raleigh offering craft beer and dim sum, plus a flower shop and bookstore, opened last Wednesday, the News & Observer reported, noting that the bookshop and floral shop inside…",
-      "date": "NOV 14, 2023",
-      "categories": [
-        "NEWS"
+      ],
+      "section": [
+        {
+          "id": 1,
+          "title": "The Value of Local Bookstores",
+          "description": "<b>Local bookstores</b> offer a unique ambiance that no online retailer can replicate. The cozy nooks, knowledgeable staff, and carefully curated selections create an atmosphere that’s conducive to discovering new books and authors.",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "",
+              "text": "Local bookstores offer a unique ambiance that no online retailer can replicate. The cozy nooks, knowledgeable staff, and carefully curated selections create an atmosphere that’s conducive to discovering new books and authors."
+            },
+            {
+              "id": 2,
+              "subTitle": "",
+              "text": "Supporting Local Authors many local bookstores actively promote and support local authors by hosting book signings, readings, and events. By supporting your local bookstore, you’re indirectly supporting the literary talent in your community."
+            },
+            {
+              "id": 3,
+              "subTitle": "",
+              "text": "Cultural Hubs local bookstores often double as cultural hubs, hosting book clubs, writing workshops, and art exhibitions. They contribute to the intellectual and artistic vibrancy of your community."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Tips for Supporting Your Local Bookstore",
+          "img": "",
+          "description": "",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "1. Shop Locally",
+              "text": "When you’re looking for your next read, visit your local bookstore first. Check out their recommendations, browse their shelves, and take the time to explore books you might not have found online."
+            },
+            {
+              "id": 2,
+              "subTitle": "2. Attend Store Events",
+              "text": "Local bookstores frequently host author events, book launches, and readings. Attend these events to meet authors, engage in discussions, and show your support for the store’s literary endeavors."
+            },
+            {
+              "id": 3,
+              "subTitle": "3. Buy Merchandise",
+              "text": "Many local bookstores sell branded merchandise like tote bags, mugs, and t-shirts. Purchasing these items not only helps promote the store but also gives you unique and bookish accessories."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "4. Participate in Loyalty Programs",
+          "img": "",
+          "description": "Many local bookstores have loyalty programs or membership options that offer discounts, exclusive access, and special promotions. Joining these programs can save you money while supporting the store.",
+          "content": [
+            {
+              "id": 1,
+              "subTitle": "1. Shop Locally",
+              "text": "When you’re looking for your next read, visit your local bookstore first. Check out their recommendations, browse their shelves, and take the time to explore books you might not have found online."
+            },
+            {
+              "id": 2,
+              "subTitle": "2. Attend Store Events",
+              "text": "Local bookstores frequently host author events, book launches, and readings. Attend these events to meet authors, engage in discussions, and show your support for the store’s literary endeavors."
+            },
+            {
+              "id": 3,
+              "subTitle": "3. Buy Merchandise",
+              "text": "Many local bookstores sell branded merchandise like tote bags, mugs, and t-shirts. Purchasing these items not only helps promote the store but also gives you unique and bookish accessories."
+            },
+            {
+              "id": 4,
+              "subTitle": "4. Participate in Loyalty Programs",
+              "text": "Many local bookstores have loyalty programs or membership options that offer discounts, exclusive access, and special promotions. Joining these programs can save you money while supporting the store."
+            },
+            {
+              "id": 5,
+              "subTitle": "5. Promote Them on Social Media",
+              "text": "Spread the word about your favorite local bookstore on social media. Share photos of your latest purchases, write reviews, and tag the store in your posts. Your recommendations can reach a broader audience."
+            },
+            {
+              "id": 6,
+              "subTitle": "6. Gift Local Books",
+              "text": "Spread the word about your favorite local bookstore on social media. Share photos of your latest purchases, write reviews, and tag the store in your posts. Your recommendations can reach a broader audience."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Challenges and Triumphs",
+          "description": "Restoration work often involves intricate repairs, page cleaning, and rebinding. Every book presents a unique set of challenges, making the process a constant journey of learning and problem-solving. It’s a laborious yet deeply rewarding endeavor."
+        },
+        {
+          "id": 5,
+          "title": "Preserving History",
+          "description": "By restoring books, bookbinders play a crucial role in preserving literary history. They save rare and antique books from deterioration, allowing future generations to experience the magic of the written word[^4]."
+        },
+        {
+          "id": 6,
+          "title": "Unleash Your Creativity",
+          "img": "",
+          "description": "You don’t need to be a professional bookbinder to explore this craft. DIY bookbinding is a rewarding hobby that lets you create personalized notebooks, journals, and scrapbooks. It’s a perfect blend of artistry and functionality."
+        },
+        {
+          "id": 7,
+          "title": "Online Resources",
+          "description": "There are plenty of online tutorials, forums, and communities where you can learn bookbinding techniques. Websites like Bookbinding Workshop and Instructables offer step-by-step instructions and inspiration for your projects."
+        }
       ]
     }
   ],
