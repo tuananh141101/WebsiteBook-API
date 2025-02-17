@@ -534,73 +534,12 @@
   "comments": [
     {
       "id": 1,
-      "username": "john_smith",
-      "text": "Great product, I would definitely recommend it to others!",
-      "rating": 5,
-      "date": "2022-01-10"
-    },
-    {
-      "id": 2,
-      "username": "jane_doe",
-      "text": "I'm really impressed with the customer service, they went above and beyond to help me out!",
-      "rating": 4,
-      "date": "2022-02-15"
-    },
-    {
-      "id": 3,
-      "username": "sam_wilson",
-      "text": "The product arrived on time and was exactly what I was looking for.",
-      "rating": 4,
-      "date": "2022-03-01"
-    },
-    {
-      "id": 4,
-      "username": "emily_jones",
-      "text": "I had a problem with my order, but the customer service team was quick to resolve it.",
-      "rating": 3,
-      "date": "2022-04-10"
-    },
-    {
-      "id": 5,
-      "username": "mike_johnson",
-      "text": "I was disappointed with the quality of the product, it wasn't what I was expecting.",
-      "rating": 2,
-      "date": "2022-05-20"
-    },
-    {
-      "id": 6,
-      "username": "susan_lee",
-      "text": "The product is great, but it took a long time to arrive.",
-      "rating": 4,
-      "date": "2022-06-15"
-    },
-    {
-      "id": 7,
-      "username": "jacob_taylor",
-      "text": "I'm very happy with my purchase, the product is exactly what I needed.",
-      "rating": 5,
-      "date": "2022-07-01"
-    },
-    {
-      "id": 8,
-      "username": "olivia_smith",
-      "text": "The product was damaged during shipping, but the customer service team was helpful in getting me a replacement.",
-      "rating": 3,
-      "date": "2022-08-10"
-    },
-    {
-      "id": 9,
-      "username": "david_kim",
-      "text": "I haven't had a chance to use the product yet, but it looks great!",
-      "rating": 4,
-      "date": "2022-09-01"
-    },
-    {
-      "id": 10,
-      "username": "sophia_wang",
-      "text": "I'm satisfied with my purchase, but I wish the product came with more instructions.",
-      "rating": 3,
-      "date": "2022-10-15"
+      "productId": 2,
+      "name": "test",
+      "email": "test@gmail.com",
+      "content": "test test test",
+      "replies": [],
+      "createdAt": ""
     }
   ],
   "posts": [
