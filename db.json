@@ -571,7 +571,18 @@
       "email": "test@gmail.com",
       "content": "test test test",
       "replies": [],
-      "createdAt": ""
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 2,
+      "productId": 3,
+      "name": "test 1",
+      "email": "test1@gmail.com",
+      "content": "test1 test1 test1",
+      "replies": [],
+      "createdAt": "",
+      "type": "book"
     }
   ],
   "posts": [
