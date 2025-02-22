@@ -566,7 +566,7 @@
   "comments": [
     {
       "id": 1,
-      "productId": 2,
+      "productId": 1,
       "name": "test",
       "email": "test@gmail.com",
       "content": "test test test",
@@ -582,7 +582,77 @@
       "content": "test1 test1 test1",
       "replies": [],
       "createdAt": "",
-      "type": "book"
+      "type": "blog"
+    },
+    {
+      "id": 3,
+      "productId": 1,
+      "name": "tunah",
+      "email": "tunah@gmail.com",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 4,
+      "productId": 1,
+      "name": "hyp",
+      "email": "hyp@gmail.com",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 5,
+      "productId": 1,
+      "name": "hoag",
+      "email": "hoag@gmail.com",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 6,
+      "productId": 1,
+      "name": "tientt",
+      "email": "tientt@gmail.com",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 7,
+      "productId": 1,
+      "name": "tungtt",
+      "email": "tungtt@gmail.com",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 8,
+      "productId": 2,
+      "name": "toilatunah",
+      "email": "toilatunah@gmail.com",
+      "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
+    },
+    {
+      "id": 8,
+      "productId": 2,
+      "name": "toilahyp",
+      "email": "toilahyp@gmail.com",
+      "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+      "replies": [],
+      "createdAt": "",
+      "type": "blog"
     }
   ],
   "posts": [
