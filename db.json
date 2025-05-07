@@ -1139,6 +1139,26 @@
       "id": 6,
       "name": "drama",
       "image": "/images/drama_icon.webp"
+    },
+    {
+      "id": 7,
+      "name": "uncategorized",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "biography",
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "children's",
+      "image": ""
+    },
+    {
+      "id": 10,
+      "name": "politics",
+      "image": ""
     }
   ] 
 }
