@@ -1109,7 +1109,7 @@
       ]
     }
   ],
-  "categories": [
+  "featCategories": [
     {
       "id": 1,
       "name": "fiction",
@@ -1160,5 +1160,47 @@
       "name": "politics",
       "image": ""
     }
-  ] 
+  ],
+  "shopCategories": [
+    {
+      "id": 1,
+      "name": "fiction"
+    },
+    {
+      "id": 2,
+      "name": "history"
+    },
+    {
+      "id": 3,
+      "name": "mystery"
+    },
+    {
+      "id": 4,
+      "name": "family"
+    },
+    {
+      "id": 5,
+      "name": "cooking"
+    },
+    {
+      "id": 6,
+      "name": "drama"
+    },
+    {
+      "id": 7,
+      "name": "uncategorized"
+    },
+    {
+      "id": 8,
+      "name": "biography"
+    },
+    {
+      "id": 9,
+      "name": "children's"
+    },
+    {
+      "id": 10,
+      "name": "politics"
+    }
+  ]  
 }
