@@ -1,7 +1,5 @@
 "use strict";
 
-var _this = void 0;
-
 var jsonServer = require("json-server");
 
 var express = require("express");
@@ -26,10 +24,10 @@ server.use(jsonServer.rewriter({
   "/blog/:resource/:id/show": "/:resource/:id"
 })); // Custom middleware filter category(array)
 
-server.use(function (red, res, next) {
+server.use(function (req, res, next) {
   if (req.method === "GET" && req.path === "/products" && req.query.category) {
     var rawCat = req.query.category;
-    _this["delete"].red.query.category;
+    thisdelete.red.query.category;
     var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
     var allProducts = router.db.get("products").value();
     var filtered = allProducts.filter(function (products) {
