@@ -22,7 +22,32 @@ server.use("/public", express["static"](path.join(__dirname, "public"))); // Add
 server.use(jsonServer.rewriter({
   "/api/*": "/$1",
   "/blog/:resource/:id/show": "/:resource/:id"
-})); // Serve homepage with links to all APIs
+}));
+server.use(function (req, res, next) {
+  try {
+    // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
+    if (req.method === "GET" && req.path === "/products" && req.query.category) {
+      var rawCat = req.query.category;
+      delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
+
+      var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
+      var allProducts = router.db.get("products").value();
+      var filtered = allProducts.filter(function (product) {
+        return Array.isArray(product.category) && categoryFilter.some(function (cat) {
+          return product.category.includes(cat);
+        });
+      });
+      return res.jsonp(filtered);
+    }
+
+    next();
+  } catch (error) {
+    console.error("Middleware error:", error);
+    res.status(500).jsonp({
+      error: "Internal Server Error in category filter."
+    });
+  }
+}); // Serve homepage with links to all APIs
 
 server.get("/", function (req, res) {
   var resources = Object.keys(router.db.__wrapped__);
