@@ -33,7 +33,7 @@ server.use(function (req, res, next) {
       var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
       var allProducts = router.db.get("products").value();
       var filtered = allProducts.filter(function (product) {
-        return Array.isArray(product.category) && categoryFilter.some(function (cat) {
+        return Array.isArray(product.categories) && categoryFilter.some(function (cat) {
           return product.category.includes(cat);
         });
       });

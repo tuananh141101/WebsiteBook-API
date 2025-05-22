@@ -37,7 +37,7 @@ server.use((req, res, next) => {
 
       const filtered = allProducts.filter(product => {
         return (
-          Array.isArray(product.category) &&
+          Array.isArray(product.categories) &&
           categoryFilter.some(cat => product.category.includes(cat))
         );
       });
