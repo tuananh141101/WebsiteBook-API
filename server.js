@@ -23,6 +23,21 @@ server.use(
     "/blog/:resource/:id/show": "/:resource/:id",
   })
 );
+// Custom middleware filter category(array)
+server.use((red,res,next) => {
+  if (req.method === "GET" && req.path === "/products" && req.query.category) {
+    const rawCat  = req.query.category;
+    this.delete.red.query.category;
+
+    const categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
+    const allProducts = router.db.get("products").value();
+
+    const filtered = allProducts.filter(products => Array.isArray(products.category) && categoryFilter.some(cat => allProducts.category.inclueds(cat)));
+
+    return res.jsonp(filtered);
+  }
+  next();
+})
 
 // Serve homepage with links to all APIs
 server.get("/", (req, res) => {
