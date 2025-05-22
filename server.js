@@ -24,28 +24,32 @@ server.use(
   })
 );
 // Custom middleware filter category(array)
-server.use((req,res,next) => {
-  if (req.method === "GET" && req.path === "/products" && req.query.category) {
-    const rawCat  = req.query.category;
-    delete.red.query.category;
+server.use((req, res, next) => {
+  try {
+    // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
+    if (req.method === "GET" && req.path === "/products" && req.query.category) {
+      const rawCat = req.query.category;
+      delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
 
-    const categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
-    const allProducts = router.db.get("products").value();
+      const categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
 
-    const filtered = allProducts.filter(products => Array.isArray(products.category) && categoryFilter.some(cat => allProducts.category.inclueds(cat)));
+      const allProducts = router.db.get("products").value();
 
-    return res.jsonp(filtered);
+      const filtered = allProducts.filter(product => {
+        return (
+          Array.isArray(product.category) &&
+          categoryFilter.some(cat => product.category.includes(cat))
+        );
+      });
+
+      return res.jsonp(filtered);
+    }
+
+    next();
+  } catch (error) {
+    console.error("Middleware error:", error);
+    res.status(500).jsonp({ error: "Internal Server Error in category filter." });
   }
-  next();
-})
-
-// Serve homepage with links to all APIs
-server.get("/", (req, res) => {
-  const resources = Object.keys(router.db.__wrapped__);
-  const links = resources.map(
-    (resource) => `<li><a href="/${resource}">${resource}</a></li>`
-  );
-  res.send(`<h1>APIs:</h1><ul>${links.join("")}</ul>`);
 });
 
 server.use(router);

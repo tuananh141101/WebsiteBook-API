@@ -25,28 +25,29 @@ server.use(jsonServer.rewriter({
 })); // Custom middleware filter category(array)
 
 server.use(function (req, res, next) {
-  if (req.method === "GET" && req.path === "/products" && req.query.category) {
-    var rawCat = req.query.category;
-    thisdelete.red.query.category;
-    var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
-    var allProducts = router.db.get("products").value();
-    var filtered = allProducts.filter(function (products) {
-      return Array.isArray(products.category) && categoryFilter.some(function (cat) {
-        return allProducts.category.inclueds(cat);
+  try {
+    // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
+    if (req.method === "GET" && req.path === "/products" && req.query.category) {
+      var rawCat = req.query.category;
+      delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
+
+      var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
+      var allProducts = router.db.get("products").value();
+      var filtered = allProducts.filter(function (product) {
+        return Array.isArray(product.category) && categoryFilter.some(function (cat) {
+          return product.category.includes(cat);
+        });
       });
+      return res.jsonp(filtered);
+    }
+
+    next();
+  } catch (error) {
+    console.error("Middleware error:", error);
+    res.status(500).jsonp({
+      error: "Internal Server Error in category filter."
     });
-    return res.jsonp(filtered);
   }
-
-  next();
-}); // Serve homepage with links to all APIs
-
-server.get("/", function (req, res) {
-  var resources = Object.keys(router.db.__wrapped__);
-  var links = resources.map(function (resource) {
-    return "<li><a href=\"/".concat(resource, "\">").concat(resource, "</a></li>");
-  });
-  res.send("<h1>APIs:</h1><ul>".concat(links.join(""), "</ul>"));
 });
 server.use(router);
 server.listen(process.env.PORT || 3000, function () {
