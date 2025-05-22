@@ -24,6 +24,30 @@ server.use(
   })
 );
 
+server.use((req, res, next) => {
+  if (
+    req.method === "GET" &&
+    req.path === "/products" &&
+    req.query.category
+  ) {
+    const rawCat = req.query.category as string;
+
+    // Gỡ bỏ category khỏi query để tránh xung đột với json-server router
+    delete req.query.category;
+
+    const categoryFilter = rawCat.split(",");
+    const allProducts = router.db.get("products").value();
+
+    const filtered = allProducts.filter((product) =>
+      Array.isArray(product.category) &&
+      categoryFilter.some((cat) => product.category.includes(cat))
+    );
+
+    return res.jsonp(filtered);
+  }
+  next();
+});
+
 // Serve homepage with links to all APIs
 server.get("/", (req, res) => {
   const resources = Object.keys(router.db.__wrapped__);
