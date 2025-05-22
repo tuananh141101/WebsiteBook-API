@@ -24,33 +24,33 @@ server.use(
   })
 );
 // Custom middleware filter category(array)
-server.use((req, res, next) => {
-  try {
-    // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
-    if (req.method === "GET" && req.path === "/products" && req.query.category) {
-      const rawCat = req.query.category;
-      delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
+// server.use((req, res, next) => {
+//   try {
+//     // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
+//     if (req.method === "GET" && req.path === "/products" && req.query.category) {
+//       const rawCat = req.query.category;
+//       delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
 
-      const categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
+//       const categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
 
-      const allProducts = router.db.get("products").value();
+//       const allProducts = router.db.get("products").value();
 
-      const filtered = allProducts.filter(product => {
-        return (
-          Array.isArray(product.category) &&
-          categoryFilter.some(cat => product.category.includes(cat))
-        );
-      });
+//       const filtered = allProducts.filter(product => {
+//         return (
+//           Array.isArray(product.category) &&
+//           categoryFilter.some(cat => product.category.includes(cat))
+//         );
+//       });
 
-      return res.jsonp(filtered);
-    }
+//       return res.jsonp(filtered);
+//     }
 
-    next();
-  } catch (error) {
-    console.error("Middleware error:", error);
-    res.status(500).jsonp({ error: "Internal Server Error in category filter." });
-  }
-});
+//     next();
+//   } catch (error) {
+//     console.error("Middleware error:", error);
+//     res.status(500).jsonp({ error: "Internal Server Error in category filter." });
+//   }
+// });
 
 server.use(router);
 server.listen(process.env.PORT || 3000, () => {
