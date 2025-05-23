@@ -34,7 +34,7 @@ server.use(function (req, res, next) {
       var allProducts = router.db.get("products").value();
       var filtered = allProducts.filter(function (product) {
         return Array.isArray(product.categories) && categoryFilter.some(function (cat) {
-          return product.category.includes(cat);
+          return product.categories.includes(cat);
         });
       });
       return res.jsonp(filtered);
