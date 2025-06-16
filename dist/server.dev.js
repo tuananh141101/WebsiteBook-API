@@ -22,32 +22,62 @@ server.use("/public", express["static"](path.join(__dirname, "public"))); // Add
 server.use(jsonServer.rewriter({
   "/api/*": "/$1",
   "/blog/:resource/:id/show": "/:resource/:id"
-}));
+})); // --- 1. Middleware lọc theo Category ---
+
 server.use(function (req, res, next) {
   try {
-    // Middleware lọc theo category (nhiều giá trị, cách nhau bởi dấu phẩy)
     if (req.method === "GET" && req.path === "/products" && req.query.category) {
       var rawCat = req.query.category;
-      delete req.query.category; // Xóa khỏi query gốc để tránh json-server xử lý thêm
-
-      var categoryFilter = typeof rawCat === "string" ? rawCat.split(",") : [];
+      delete req.query.category;
+      var categoryFilter = typeof rawCat === "string" ? rawCat.split(",").map(function (c) {
+        return c.trim().toLowerCase();
+      }) : [];
       var allProducts = router.db.get("products").value();
-      var filtered = allProducts.filter(function (product) {
-        return Array.isArray(product.categories) && categoryFilter.some(function (cat) {
-          return product.categories.toLowerCase().includes(cat.toLowerCase());
-        });
-      });
-      return res.jsonp(filtered);
-    }
+      var filteredByCategory = allProducts.filter(function (product) {
+        if (!Array.isArray(product.categories) || product.categories.length === 0) {
+          return false;
+        }
 
-    next();
+        var foundMatchForProduct = false; // Biến cờ để theo dõi có khớp hay không
+
+        product.categories.forEach(function (productCategoryName) {
+          var normalizedProductCategory = productCategoryName.toLowerCase(); // Kiểm tra xem category đã chuẩn hóa của sản phẩm có tồn tại
+          // trong mảng categoryFilter (đã chuẩn hóa) không
+
+          var isIncludedInFilter = categoryFilter.includes(normalizedProductCategory);
+
+          if (isIncludedInFilter) {
+            foundMatchForProduct = true; // Đánh dấu là tìm thấy khớp
+
+            console.log("  MATCH! Product Category '".concat(normalizedProductCategory, "' is in filter."));
+          } else {
+            console.log("  NO MATCH. Product Category '".concat(normalizedProductCategory, "' is not in filter."));
+          }
+        });
+
+        if (!foundMatchForProduct) {
+          console.log("  Product ID ".concat(product.id, ": REJECTED by Category Filter (no overall match)."));
+        } else {
+          console.log("  Product ID ".concat(product.id, ": PASSED Category Filter (found at least one match)."));
+        }
+
+        return foundMatchForProduct;
+      });
+      req.filteredData = filteredByCategory;
+      next();
+    } else {
+      console.log("Category Middleware: No category filter or not /products. Initializing req.filteredData with all products.");
+      req.filteredData = router.db.get("products").value();
+      next();
+    }
   } catch (error) {
-    console.error("Middleware error:", error);
+    console.error("Category Middleware ERROR:", error);
     res.status(500).jsonp({
       error: "Internal Server Error in category filter."
     });
   }
-}); // Serve homepage with links to all APIs
+}); // --- 2. Middlewrae lọc theo Author ---
+// Serve homepage with links to all APIs
 
 server.get("/", function (req, res) {
   var resources = Object.keys(router.db.__wrapped__);
@@ -56,6 +86,16 @@ server.get("/", function (req, res) {
   });
   res.send("<h1>APIs:</h1><ul>".concat(links.join(""), "</ul>"));
 });
+
+router.render = function (req, res) {
+  // ... logic router.render như đã trình bày ở trên ...
+  if (req.path === '/products' && req.filteredData !== undefined) {
+    return res.jsonp(req.filteredData);
+  }
+
+  res.jsonp(res.locals.data);
+};
+
 server.use(router);
 server.listen(process.env.PORT || 3000, function () {
   console.log("JSON Server is running");
