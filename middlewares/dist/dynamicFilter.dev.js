@@ -1,10 +1,33 @@
 "use strict";
 
+var _require = require("../server"),
+    search = _require.search;
+
 var dynamicFilterMiddleware = function dynamicFilterMiddleware(router) {
   return function (req, res, next) {
     if (req.method === "GET" && req.path === "/products") {
       try {
-        var currentFilteredData = router.db.get("products").value(); // --- Lọc theo Category ---
+        var currentFilteredData = router.db.get("products").value(); // --- Search toàn cục ---
+
+        if (req.query.search) {
+          var keyword = req.query.search.toLowerCase();
+          delete req.query.search;
+          console.log("🚀 ~ keyword:", keyword); // const matchData = () => {
+          //     const nameMatch = currentFilteredData.filter(product => {
+          //         return keyword.toLowerCase().includes(product.name.toLowerCase())
+          //     });
+          //     const authorMatch = currentFilteredData.author.toLowerCase().includes(keyword.toLowerCase());
+          //     const categoriesMatch = Array.isArray(currentFilteredData.categories) ? currentFilteredData.categories.some(cat => cat.toLowerCase().includes(keyword))
+          //     : false;
+          //     return nameMatch || authorMatch || categoriesMatch;
+          // }
+          // currentFilteredData = matchData();
+
+          currentFilteredData = currentFilteredData.filter(function (product) {
+            var nameMatch = product;
+          });
+        } // --- Lọc theo Category ---
+
 
         if (req.query.category) {
           var rawCat = req.query.category;
@@ -48,26 +71,20 @@ var dynamicFilterMiddleware = function dynamicFilterMiddleware(router) {
           var min = parseFloat(req.query.minPrice);
           var max = parseFloat(req.query.maxPrice);
           delete req.query.minPrice;
-          delete req.query.maxPrice; // const minPrice = !Number.isNaN(min) ? min : -Infinity;
-          // const maxPrice = !Number.isNaN(max) ? max : Infinity;
-
-          if (!isNaN(minParsed)) {
-            minPrice = minParsed;
-          }
-
-          if (!isNaN(maxParsed)) {
-            maxPrice = maxParsed;
-          }
-
+          delete req.query.maxPrice;
+          var minPrice = -Infinity;
+          var maxPrice = Infinity;
+          if (!isNaN(min)) minPrice = min;
+          if (!isNaN(max)) maxPrice = max;
           var filteredPrice = currentFilteredData.filter(function (p) {
             var price = parseFloat(p.price);
-            return !Number.isNaN(price) && price >= minPrice && price <= maxPrice;
+            return price && price >= minPrice && price <= maxPrice;
           });
           currentFilteredData = filteredPrice;
         }
 
         req.filteredData = currentFilteredData;
-        next(); // Chuyển yêu cầu đến middleware tiếp theo
+        next();
       } catch (error) {
         console.error("Dynamic Filter Middleware ERROR:", error);
         res.status(500).jsonp({

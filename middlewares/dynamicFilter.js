@@ -1,7 +1,23 @@
+const { search } = require("../server");
+
 const dynamicFilterMiddleware = (router) => (req, res, next) => {
     if (req.method === "GET" && req.path === "/products") {
         try {
             let currentFilteredData = router.db.get("products").value();
+            
+            // --- Search toàn cục ---
+            if (req.query.search) {
+                const keyword = req.query.search.toLowerCase();
+                delete req.query.search;
+
+                currentFilteredData = currentFilteredData.filter(product => {
+                    const nameMatch = product.name?.toLowerCase().includes(keyword);
+                    const authorMatch = product.author?.toLowerCase().includes(keyword);
+                    const categoriesMatch = Array.isArray(product.categories) ? product.categories.some(cat => cat.toLowerCase().includes(keyword)) : false;
+
+                    return nameMatch || authorMatch || categoriesMatch;
+                })
+            } 
 
             // --- Lọc theo Category ---
             if (req.query.category) {
@@ -44,25 +60,22 @@ const dynamicFilterMiddleware = (router) => (req, res, next) => {
 
                 delete req.query.minPrice;
                 delete req.query.maxPrice;
+                
+                let minPrice = -Infinity;
+                let maxPrice = Infinity;
 
-                // const minPrice = !Number.isNaN(min) ? min : -Infinity;
-                // const maxPrice = !Number.isNaN(max) ? max : Infinity;
-                if (!isNaN(minParsed)) {
-                    minPrice = minParsed;
-                }
-                if (!isNaN(maxParsed)) {
-                    maxPrice = maxParsed;
-                }
+                if (!isNaN(min)) minPrice = min;
+                if (!isNaN(max)) maxPrice = max;
 
                 const filteredPrice = currentFilteredData.filter(p => {
                     const price = parseFloat(p.price);
-                    return !Number.isNaN(price) && price >= minPrice && price <= maxPrice;
+                    return price && price >= minPrice && price <= maxPrice;
                 });
                 currentFilteredData = filteredPrice;
             }
 
             req.filteredData = currentFilteredData;
-            next(); // Chuyển yêu cầu đến middleware tiếp theo
+            next();
         } catch (error) {
             console.error("Dynamic Filter Middleware ERROR:", error);
             res.status(500).jsonp({ error: "Internal Server Error in dynamic filter." });
