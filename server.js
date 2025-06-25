@@ -6,6 +6,8 @@ const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const dynamicFilterMiddleware = require('./middlewares/dynamicFilter');
+const dynamicSort = require('./middlewares/dynamicSort');
+const finalResponseMiddleware = require("./middlewares/finalResponseMiddle");
 
 // Thêm middleware để cấu hình header 'Access-Control-Allow-Origin'
 server.use((req, res, next) => {
@@ -17,7 +19,9 @@ server.use((req, res, next) => {
 
 server.use(middlewares);
 server.use(dynamicFilterMiddleware(router));
+server.use(dynamicSort(router));
 server.use("/public", express.static(path.join(__dirname, "public")));
+server.use(finalResponseMiddleware);
 // Add this before server.use(router)
 server.use(
   jsonServer.rewriter({
@@ -35,13 +39,13 @@ server.get("/", (req, res) => {
   res.send(`<h1>APIs:</h1><ul>${links.join("")}</ul>`);
 });
 
-router.render = (req, res) => {
-    // ... logic router.render như đã trình bày ở trên ...
-    if (req.path === '/products' && req.filteredData !== undefined) {
-      return res.jsonp(req.filteredData);
-    }
-    res.jsonp(res.locals.data);
-};
+// router.render = (req, res) => {
+//     // ... logic router.render như đã trình bày ở trên ...
+//     if (req.path === '/products' && req.filteredData !== undefined) {
+//       return res.jsonp(req.filteredData);
+//     }
+//     res.jsonp(res.locals.data);
+// };
 
 server.use(router);
 server.listen(process.env.PORT || 3000, () => {

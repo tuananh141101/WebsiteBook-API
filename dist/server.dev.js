@@ -10,7 +10,11 @@ var server = jsonServer.create();
 var router = jsonServer.router("db.json");
 var middlewares = jsonServer.defaults();
 
-var dynamicFilterMiddleware = require('./middlewares/dynamicFilter'); // Thêm middleware để cấu hình header 'Access-Control-Allow-Origin'
+var dynamicFilterMiddleware = require('./middlewares/dynamicFilter');
+
+var dynamicSort = require('./middlewares/dynamicSort');
+
+var finalResponseMiddleware = require("./middlewares/finalResponseMiddle"); // Thêm middleware để cấu hình header 'Access-Control-Allow-Origin'
 
 
 server.use(function (req, res, next) {
@@ -21,7 +25,9 @@ server.use(function (req, res, next) {
 });
 server.use(middlewares);
 server.use(dynamicFilterMiddleware(router));
-server.use("/public", express["static"](path.join(__dirname, "public"))); // Add this before server.use(router)
+server.use(dynamicSort(router));
+server.use("/public", express["static"](path.join(__dirname, "public")));
+server.use(finalResponseMiddleware); // Add this before server.use(router)
 
 server.use(jsonServer.rewriter({
   "/api/*": "/$1",
@@ -34,16 +40,13 @@ server.get("/", function (req, res) {
     return "<li><a href=\"/".concat(resource, "\">").concat(resource, "</a></li>");
   });
   res.send("<h1>APIs:</h1><ul>".concat(links.join(""), "</ul>"));
-});
-
-router.render = function (req, res) {
-  // ... logic router.render như đã trình bày ở trên ...
-  if (req.path === '/products' && req.filteredData !== undefined) {
-    return res.jsonp(req.filteredData);
-  }
-
-  res.jsonp(res.locals.data);
-};
+}); // router.render = (req, res) => {
+//     // ... logic router.render như đã trình bày ở trên ...
+//     if (req.path === '/products' && req.filteredData !== undefined) {
+//       return res.jsonp(req.filteredData);
+//     }
+//     res.jsonp(res.locals.data);
+// };
 
 server.use(router);
 server.listen(process.env.PORT || 3000, function () {

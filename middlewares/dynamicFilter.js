@@ -1,5 +1,3 @@
-const { search } = require("../server");
-
 const dynamicFilterMiddleware = (router) => (req, res, next) => {
     if (req.method === "GET" && req.path === "/products") {
         try {
