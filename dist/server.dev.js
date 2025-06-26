@@ -14,6 +14,8 @@ var dynamicFilterMiddleware = require('./middlewares/dynamicFilter');
 
 var dynamicSort = require('./middlewares/dynamicSort');
 
+var paginationMiddleware = require('./middlewares/paginationMiddle');
+
 var finalResponseMiddleware = require("./middlewares/finalResponseMiddle"); // Thêm middleware để cấu hình header 'Access-Control-Allow-Origin'
 
 
@@ -26,8 +28,9 @@ server.use(function (req, res, next) {
 server.use(middlewares);
 server.use(dynamicFilterMiddleware(router));
 server.use(dynamicSort(router));
-server.use("/public", express["static"](path.join(__dirname, "public")));
-server.use(finalResponseMiddleware); // Add this before server.use(router)
+server.use(paginationMiddleware);
+server.use(finalResponseMiddleware);
+server.use("/public", express["static"](path.join(__dirname, "public"))); // Add this before server.use(router)
 
 server.use(jsonServer.rewriter({
   "/api/*": "/$1",

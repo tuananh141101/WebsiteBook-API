@@ -45,7 +45,6 @@ const dynamicSort = (router) => (req, res, next) => {
 
             req.filteredData = data;
             next();
-
         } catch (error) {
             console.error("Dynamic Sort Error:", error);
             res.status(500).jsonp({ error: "Internal Server Error in dynamic sort." });

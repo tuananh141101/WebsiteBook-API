@@ -9,8 +9,8 @@ const dynamicFilterMiddleware = (router) => (req, res, next) => {
                 delete req.query.search;
 
                 currentFilteredData = currentFilteredData.filter(product => {
-                    const nameMatch = product.name?.toLowerCase().includes(keyword);
-                    const authorMatch = product.author?.toLowerCase().includes(keyword);
+                    const nameMatch = product.name.toLowerCase().includes(keyword);
+                    const authorMatch = product.author.toLowerCase().includes(keyword);
                     const categoriesMatch = Array.isArray(product.categories) ? product.categories.some(cat => cat.toLowerCase().includes(keyword)) : false;
 
                     return nameMatch || authorMatch || categoriesMatch;

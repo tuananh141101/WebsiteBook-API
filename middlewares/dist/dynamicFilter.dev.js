@@ -1,8 +1,5 @@
 "use strict";
 
-var _require = require("../server"),
-    search = _require.search;
-
 var dynamicFilterMiddleware = function dynamicFilterMiddleware(router) {
   return function (req, res, next) {
     if (req.method === "GET" && req.path === "/products") {
@@ -12,19 +9,13 @@ var dynamicFilterMiddleware = function dynamicFilterMiddleware(router) {
         if (req.query.search) {
           var keyword = req.query.search.toLowerCase();
           delete req.query.search;
-          console.log("🚀 ~ keyword:", keyword); // const matchData = () => {
-          //     const nameMatch = currentFilteredData.filter(product => {
-          //         return keyword.toLowerCase().includes(product.name.toLowerCase())
-          //     });
-          //     const authorMatch = currentFilteredData.author.toLowerCase().includes(keyword.toLowerCase());
-          //     const categoriesMatch = Array.isArray(currentFilteredData.categories) ? currentFilteredData.categories.some(cat => cat.toLowerCase().includes(keyword))
-          //     : false;
-          //     return nameMatch || authorMatch || categoriesMatch;
-          // }
-          // currentFilteredData = matchData();
-
           currentFilteredData = currentFilteredData.filter(function (product) {
-            var nameMatch = product;
+            var nameMatch = product.name.toLowerCase().includes(keyword);
+            var authorMatch = product.author.toLowerCase().includes(keyword);
+            var categoriesMatch = Array.isArray(product.categories) ? product.categories.some(function (cat) {
+              return cat.toLowerCase().includes(keyword);
+            }) : false;
+            return nameMatch || authorMatch || categoriesMatch;
           });
         } // --- Lọc theo Category ---
 
