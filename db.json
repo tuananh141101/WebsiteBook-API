@@ -1182,5 +1182,37 @@
       "id": 10,
       "name": "politics"
     }
-  ]  
+  ],
+  "listAuthors": [
+    { "id": 1, "name": "Danielle Steel" },
+    { "id": 2, "name": "Kristin Fields" },
+    { "id": 3, "name": "Etaf Rum" },
+    { "id": 4, "name": "Michelle Obama" },
+    { "id": 5, "name": "Trevor Noah" },
+    { "id": 6, "name": "Tara Westover" },
+    { "id": 7, "name": "Camille Pagan" },
+    { "id": 8, "name": "Ralph Ellison" },
+    { "id": 9, "name": "Maya Angelou" },
+    { "id": 10, "name": "Marlon James" },
+    { "id": 11, "name": "Nes Vizzini" },
+    { "id": 12, "name": "Dr. Seuss" },
+    { "id": 13, "name": "R. J. Palacio" },
+    { "id": 14, "name": "Mark Hyman M.D" },
+    { "id": 15, "name": "Katie Parla" },
+    { "id": 16, "name": "Michael Pollan" },
+    { "id": 17, "name": "A. J. Finn" },
+    { "id": 18, "name": "Rachels Hollis" },
+    { "id": 19, "name": "Mark Manson" },
+    { "id": 20, "name": "Elliot Ackerman" },
+    { "id": 21, "name": "Jordan B. Peterson" },
+    { "id": 22, "name": "Lisa Wingate" },
+    { "id": 23, "name": "Delia Owens" },
+    { "id": 24, "name": "Peter Hellers" },
+    { "id": 25, "name": "James Holland" },
+    { "id": 26, "name": "Patrick Radden Keefe" },
+    { "id": 27, "name": "Stephen Hawking" },
+    { "id": 28, "name": "Michael Wolf" },
+    { "id": 29, "name": "Susan Bernhard" },
+    { "id": 30, "name": "Ismail Kadare" }
+  ] 
 }
