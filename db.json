@@ -1184,35 +1184,151 @@
     }
   ],
   "listAuthors": [
-    { "id": 1, "name": "Danielle Steel" },
-    { "id": 2, "name": "Kristin Fields" },
-    { "id": 3, "name": "Etaf Rum" },
-    { "id": 4, "name": "Michelle Obama" },
-    { "id": 5, "name": "Trevor Noah" },
-    { "id": 6, "name": "Tara Westover" },
-    { "id": 7, "name": "Camille Pagan" },
-    { "id": 8, "name": "Ralph Ellison" },
-    { "id": 9, "name": "Maya Angelou" },
-    { "id": 10, "name": "Marlon James" },
-    { "id": 11, "name": "Nes Vizzini" },
-    { "id": 12, "name": "Dr. Seuss" },
-    { "id": 13, "name": "R. J. Palacio" },
-    { "id": 14, "name": "Mark Hyman M.D" },
-    { "id": 15, "name": "Katie Parla" },
-    { "id": 16, "name": "Michael Pollan" },
-    { "id": 17, "name": "A. J. Finn" },
-    { "id": 18, "name": "Rachels Hollis" },
-    { "id": 19, "name": "Mark Manson" },
-    { "id": 20, "name": "Elliot Ackerman" },
-    { "id": 21, "name": "Jordan B. Peterson" },
-    { "id": 22, "name": "Lisa Wingate" },
-    { "id": 23, "name": "Delia Owens" },
-    { "id": 24, "name": "Peter Hellers" },
-    { "id": 25, "name": "James Holland" },
-    { "id": 26, "name": "Patrick Radden Keefe" },
-    { "id": 27, "name": "Stephen Hawking" },
-    { "id": 28, "name": "Michael Wolf" },
-    { "id": 29, "name": "Susan Bernhard" },
-    { "id": 30, "name": "Ismail Kadare" }
-  ] 
+    {
+      "id": 1,
+      "name": "Danielle Steel"
+    },
+    {
+      "id": 2,
+      "name": "Kristin Fields"
+    },
+    {
+      "id": 3,
+      "name": "Etaf Rum"
+    },
+    {
+      "id": 4,
+      "name": "Michelle Obama"
+    },
+    {
+      "id": 5,
+      "name": "Trevor Noah"
+    },
+    {
+      "id": 6,
+      "name": "Tara Westover"
+    },
+    {
+      "id": 7,
+      "name": "Camille Pagan"
+    },
+    {
+      "id": 8,
+      "name": "Ralph Ellison"
+    },
+    {
+      "id": 9,
+      "name": "Maya Angelou"
+    },
+    {
+      "id": 10,
+      "name": "Marlon James"
+    },
+    {
+      "id": 11,
+      "name": "Nes Vizzini"
+    },
+    {
+      "id": 12,
+      "name": "Dr. Seuss"
+    },
+    {
+      "id": 13,
+      "name": "R. J. Palacio"
+    },
+    {
+      "id": 14,
+      "name": "Mark Hyman M.D"
+    },
+    {
+      "id": 15,
+      "name": "Katie Parla"
+    },
+    {
+      "id": 16,
+      "name": "Michael Pollan"
+    },
+    {
+      "id": 17,
+      "name": "A. J. Finn"
+    },
+    {
+      "id": 18,
+      "name": "Rachels Hollis"
+    },
+    {
+      "id": 19,
+      "name": "Mark Manson"
+    },
+    {
+      "id": 20,
+      "name": "Elliot Ackerman"
+    },
+    {
+      "id": 21,
+      "name": "Jordan B. Peterson"
+    },
+    {
+      "id": 22,
+      "name": "Lisa Wingate"
+    },
+    {
+      "id": 23,
+      "name": "Delia Owens"
+    },
+    {
+      "id": 24,
+      "name": "Peter Hellers"
+    },
+    {
+      "id": 25,
+      "name": "James Holland"
+    },
+    {
+      "id": 26,
+      "name": "Patrick Radden Keefe"
+    },
+    {
+      "id": 27,
+      "name": "Stephen Hawking"
+    },
+    {
+      "id": 28,
+      "name": "Michael Wolf"
+    },
+    {
+      "id": 29,
+      "name": "Susan Bernhard"
+    },
+    {
+      "id": 30,
+      "name": "Ismail Kadare"
+    }
+  ],
+  "users": [
+    {
+      "email": "nani@gmail.com",
+      "password": "$2a$10$B2hrUtrj5WTMtqZtQFJseelOSXwNsOnKgjk49ub2Y/M3YCLAP1b.e",
+      "username": "nguyennani",
+      "id": 1
+    },
+    {
+      "email": "test@example.com",
+      "password": "$2a$10$7aV5JQYZ4gr6nHgWIisdD.9F6VhkbPmoFZ6bxo8GiPbxpeX6qEfOW",
+      "username": "tester",
+      "id": 2
+    },
+    {
+      "email": "test2@example.com",
+      "password": "$2a$10$eADT..j75xysUEXiero5..5OJ2gBfvn.FIRCUIeth4EWfn9XEs/66",
+      "username": "tester2",
+      "id": 3
+    },
+    {
+      "email": "test3@example.com",
+      "password": "$2a$10$PlHegh.fk5rQqaHmqif13Ovi294tl0ZK6QvyVqnJBkjtJXtZkpbLu",
+      "username": "tester3",
+      "id": 4
+    }
+  ]
 }

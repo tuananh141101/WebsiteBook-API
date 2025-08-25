@@ -1,14 +1,18 @@
 const jsonServer = require("json-server");
 const express = require("express");
 const path = require("path");
+const auth = require("json-server-auth");
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
+const addDefaultUserFields = require('./middlewares/addDefaultUserFields');
 const dynamicFilterMiddleware = require('./middlewares/dynamicFilter');
 const dynamicSort = require('./middlewares/dynamicSort');
 const paginationMiddleware = require('./middlewares/paginationMiddle');
 const finalResponseMiddleware = require("./middlewares/finalResponseMiddle");
+
+server.db = router.db;
 
 // Thêm middleware để cấu hình header 'Access-Control-Allow-Origin'
 server.use((req, res, next) => {
@@ -41,14 +45,8 @@ server.get("/", (req, res) => {
   res.send(`<h1>APIs:</h1><ul>${links.join("")}</ul>`);
 });
 
-// router.render = (req, res) => {
-//     // ... logic router.render như đã trình bày ở trên ...
-//     if (req.path === '/products' && req.filteredData !== undefined) {
-//       return res.jsonp(req.filteredData);
-//     }
-//     res.jsonp(res.locals.data);
-// };
-
+server.use(addDefaultUserFields);
+server.use(auth);  
 server.use(router);
 server.listen(process.env.PORT || 3000, () => {
   console.log("JSON Server is running");
