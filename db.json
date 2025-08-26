@@ -1305,30 +1305,5 @@
       "name": "Ismail Kadare"
     }
   ],
-  "users": [
-    {
-      "email": "nani@gmail.com",
-      "password": "$2a$10$B2hrUtrj5WTMtqZtQFJseelOSXwNsOnKgjk49ub2Y/M3YCLAP1b.e",
-      "username": "nguyennani",
-      "id": 1
-    },
-    {
-      "email": "test@example.com",
-      "password": "$2a$10$7aV5JQYZ4gr6nHgWIisdD.9F6VhkbPmoFZ6bxo8GiPbxpeX6qEfOW",
-      "username": "tester",
-      "id": 2
-    },
-    {
-      "email": "test2@example.com",
-      "password": "$2a$10$eADT..j75xysUEXiero5..5OJ2gBfvn.FIRCUIeth4EWfn9XEs/66",
-      "username": "tester2",
-      "id": 3
-    },
-    {
-      "email": "test3@example.com",
-      "password": "$2a$10$PlHegh.fk5rQqaHmqif13Ovi294tl0ZK6QvyVqnJBkjtJXtZkpbLu",
-      "username": "tester3",
-      "id": 4
-    }
-  ]
+  "users": []
 }
