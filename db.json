@@ -1305,5 +1305,14 @@
       "name": "Ismail Kadare"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "user1@gmail.com",
+      "password": "$2a$10$vjAv4XyWpm1d3VbIvt8yOu5JEovAlfbOYSudkyNcRvHpEVb0W4YJy",
+      "username": "user1",
+      "wishlist": [],
+      "cart": [],
+      "id": 1
+    }
+  ]
 }
