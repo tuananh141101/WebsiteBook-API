@@ -1313,6 +1313,15 @@
       "wishlist": [],
       "cart": [],
       "id": 1
+    },
+    {
+      "email": "user2@gmail.com",
+      "password": "$2a$10$kOoE.qt/MVI4bjmxjNYFDe38ZJpRHUGBQyOELdlPHYhIShkNOiAkW",
+      "username": "user2",
+      "wishlist": [],
+      "cart": [],
+      "role": "user",
+      "id": 2
     }
   ]
 }
