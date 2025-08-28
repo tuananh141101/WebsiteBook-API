@@ -1310,18 +1310,22 @@
       "email": "user1@gmail.com",
       "password": "$2a$10$vjAv4XyWpm1d3VbIvt8yOu5JEovAlfbOYSudkyNcRvHpEVb0W4YJy",
       "username": "user1",
-      "wishlist": [],
-      "cart": [],
+      "role": "admin",
       "id": 1
     },
     {
       "email": "user2@gmail.com",
       "password": "$2a$10$kOoE.qt/MVI4bjmxjNYFDe38ZJpRHUGBQyOELdlPHYhIShkNOiAkW",
       "username": "user2",
-      "wishlist": [],
-      "cart": [],
       "role": "user",
       "id": 2
+    },
+    {
+      "email": "user3@gmail.com",
+      "password": "$2a$10$uOOG.6WCQjnd0DywIfBHE.Gqfz9cwuIdDoWY5sG8OVW2c3Sy0dr32",
+      "username": "user3",
+      "role": "user",
+      "id": 3
     }
   ]
 }
