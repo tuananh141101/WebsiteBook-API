@@ -5,7 +5,8 @@
       "src": "server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["db.json"]
+        "includeFiles": ["db.json"],
+         "runtime": "nodejs23.8.0"
       }
     }
   ],
