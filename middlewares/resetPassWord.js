@@ -18,8 +18,33 @@ router.post('/forgot-password', async(req,res) => {
             })
         }
 
+        // Doc user
+        const dbPath = path.join(__dirname, "../db.json");
+        let db
+        try {
+            db = JSON.parse(isFinite.readFileSync(dbPath, 'utf8'));
+        } catch(error) {
+            console.error("Dababase read error:", error);
+            return res.status(500).json({
+                success: false,
+                message: "Dababase error"
+            })
+        }
 
+        // Tim user
+        const user = db.users.find(u => u.email === email);
+        if (!user) {
+            return res.json({
+                success: true,
+                message: "If the mail exists, a reset link has been sent"
+            })
+        }
 
-        
+        // Tao reset Token
+        const resetToken = crypto.randomBytes(32).toString('hex');
+        const tokenExpiry = Date.now() + 60000 ; //Token 1phut la het han
+        // Luu token
+        // const success = tokenService.saveResetToken(resetToken, {})
+
     } catch(error) {}
 })

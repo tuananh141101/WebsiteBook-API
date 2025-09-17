@@ -1344,9 +1344,9 @@
       },
       "shippingAddress": {
         "type": "shipping",
-        "fullname": "",
-        "address": "",
-        "phone": "",
+        "fullname": "nguyen van b",
+        "address": "so 47 hoang van thai",
+        "phone": "0986748929",
         "proviceId": "",
         "districtId": "",
         "wardId": ""
@@ -1359,19 +1359,43 @@
       "role": "user",
       "id": 3,
       "billingAddress": {
-        "fullname": "nguyen van de",
-        "address": "",
-        "phone": "",
-        "email": ""
+        "type": "billing",
+        "fullname": "nguyen anh to",
+        "address": "so 55 hoang van thai, thanh xuan, ha noi",
+        "phone": "0869123449",
+        "email": "nguyenanhto@gmail.com"
       },
       "shippingAddress": {
         "type": "shipping",
-        "fullname": "",
-        "address": "",
-        "phone": "",
-        "proviceId": "",
-        "districtId": "",
-        "wardId": ""
+        "fullname": "nguyen manh hiep",
+        "address": "Hoang van thai, ha noi ",
+        "phone": "0123456789",
+        "proviceId": "1",
+        "districtId": "9",
+        "wardId": "352"
+      }
+    },
+    {
+      "email": "user4@gmail.com",
+      "password": "$2a$10$GKbenDpYpvGEEuGfi4BP2ODZ.04E7swv1.R7FJrb66cORdBqFMp8u",
+      "username": "newuser4",
+      "role": "user",
+      "id": 4,
+      "billingAddress": {
+        "type": "billing",
+        "fullname": "newuser4",
+        "address": "so 47 hoang van thai, phuong khuong mai, thanh pho ha noi",
+        "phone": "0123456789",
+        "email": "newuser4@gmail.com"
+      },
+      "shippingAddress": {
+        "type": "shipping",
+        "fullname": "ngtuananh",
+        "address": "so 16 phuong tran phu ha giang",
+        "phone": "0987654321",
+        "proviceId": "2",
+        "districtId": "24",
+        "wardId": "691"
       }
     }
   ]
