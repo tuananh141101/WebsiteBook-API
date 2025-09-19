@@ -8,6 +8,10 @@ const tokenService = require('../services/tokenService');
 
 const router = express.Router();
 
+/**
+ * POST/forgot-password
+ * Gui email reset-password
+ * **/
 router.post('/forgot-password', async(req,res) => {
     try {
         const { email } = req.body;
@@ -22,7 +26,7 @@ router.post('/forgot-password', async(req,res) => {
         const dbPath = path.join(__dirname, "../db.json");
         let db
         try {
-            db = JSON.parse(isFinite.readFileSync(dbPath, 'utf8'));
+            db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
         } catch(error) {
             console.error("Dababase read error:", error);
             return res.status(500).json({
@@ -42,9 +46,187 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tao reset Token
         const resetToken = crypto.randomBytes(32).toString('hex');
-        const tokenExpiry = Date.now() + 60000 ; //Token 1phut la het han
+        const tokenExpiry = Date.now() + 60000 ; //Token 1min la het han - (3600000 - 1hour)
         // Luu token
-        // const success = tokenService.saveResetToken(resetToken, {})
+        const success = tokenService.saveResetToken(resetToken, {
+            userId: user.id,
+            email: user.email,
+            expires: tokenExpiry
+        })
 
-    } catch(error) {}
+        if (!success) {
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to generate reset token'
+            })
+        }
+
+        // Gui email
+        const resetUrl  = `${req.protocol}://${req.get('host')}/reset-password?token=${resetToken}`
+        try {
+            await emailService.sendResetPasswordEmail(user.email, resetUrl, user.namne)
+            res.json({
+                success: true,
+                message: 'Password reset email sent successfully',
+                // Doan nay la development testing
+                ...(process.env.NODE_ENV === 'development' && {
+                    resetToken,
+                    resetUrl
+                })
+            })
+        } catch(emailError) {
+            console.error("Email send error:", emailError)
+            
+            // Rmove token neu gui that bai
+            tokenService.deleteResetToken(resetToken)
+        } 
+    } catch(error) {
+        console.error('Forgot password error:', error)
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error'
+        })
+    }
 })
+
+/**
+ * POST/forgot-password
+ * Reset password voi token
+ * **/
+router.post('/reset-password', async (req,res) => {
+    try {
+        const {token, newPassword} = req.body;
+
+        // Validation
+        if (!token || !newPassword) {
+            return res.status(400).json({
+                success: false,
+                message: 'Token and new password are required'
+            })
+        }
+        if (newPassword.length < 5) {
+            return res.status(400).json({
+                success: false,
+                message: 'Password must be at least 6 characters long'
+            })
+        }
+
+        // Kiem tra token
+        const tokenData = tokenService.getResetToken(token)
+        if (!tokenData) {
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid or expired reset token'
+            })
+        }
+
+        // Doc database
+        const dbPath = path.join(__dirname, '../db.json')
+        let db 
+        try {
+            db = JSON.parse(fs.readFileSync(dbPath, 'utf8')) //readFileSync  doc file dong bo (ngung toan bo chuong trinh cho den khi doc xong)
+        } catch (error) {
+            console.error('Database read error:',error)
+            return res.status(500).json({
+                success: false,
+                message: 'Database error'
+            })
+        }
+
+        // Tim user
+        const userIndex = db.users.findIndex(u => u.id === tokenData.userId)
+        if (userIndex === -1) {
+            return res.status(400).json({
+                success: false,
+                message: 'User not found'
+            })
+        }
+
+        // Hash password moi
+        const hashedPassword = bcrypt.hashSync(newPassword, 10)
+
+        // Cap nhap password
+        db.users[userIndex].password = hashedPassword
+        db.users[userIndex].updatedAt = new Date().toISOString()
+
+        // Luu database 
+        try {
+            fs.writeFileSync(dbPath, JSON.stringify(db,null,2))
+        } catch (error) {
+            console.error("Database write error:", error)
+            return res.status(500).json({
+                success: false,
+                message: 'Failed to update password'
+            })
+        }
+
+        // Xoa token da su dung
+        tokenService.deleteResetToken(token)
+
+        res.json({
+            success: true,
+            message: 'Password reset successfully'
+        })
+
+    } catch (error) {
+        console.error('Reset password error:', error)
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error'
+        })
+    }
+})
+
+/**
+ * GET /verify-reset-token/:token
+ * Verify reset token validity
+ * **/ 
+router.get('/verify-reset-token/:token', (req,res) => {
+    try {
+        const {token} = req.params
+        if (!token) {
+            return res.status(400).json({
+                success: false,
+                value: false,
+                message: 'Token is required'
+            })
+        }
+
+        const tokenData = tokenService.getResetToken(token)
+        if (!tokenData) {
+            return res.status(400).json({
+                success: false,
+                valid: false,
+                message: 'Invalid token'
+            })
+        }
+
+        // Kiem tra expiry(het han)
+        if (Date.now() > tokenData.expires) {
+            tokenService.deleteResetToken(token)
+
+            return res.status(400).json({
+                success: false,
+                valid: false,
+                message: 'Token expired'
+            })
+        }
+        
+        res.json({
+            success: true,
+            valid: true,
+            email: tokenData.email,
+            expiresAt: new Date(tokenData.expires).toISOString()
+        })
+    } catch (error) {
+        console.error('Verify token error:', error)
+        res.status(500).json({
+            success: false,
+            valid: false,
+            message: 'Internal server error'
+        })
+    }
+})
+
+
+module.exports = router

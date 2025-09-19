@@ -51,6 +51,7 @@ class TokenService {
             // Cleanup tokens het han trc khi them token moi
             this.cleanUpExpiredTokens()
 
+            // Them moi token vao tokens{}
             tokens[token] = {
                 ...tokenData,
                 createdAt: Date.now()
