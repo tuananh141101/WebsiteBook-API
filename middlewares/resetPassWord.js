@@ -13,6 +13,9 @@ const router = express.Router();
  * Gui email reset-password
  * **/
 router.post('/forgot-password', async(req,res) => {
+    console.log('🔥 Forgot password called:', req.body)
+    console.log('🔥 Email received:', req.body?.email)
+
     try {
         const { email } = req.body;
         if (!email) {
@@ -46,7 +49,7 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tao reset Token
         const resetToken = crypto.randomBytes(32).toString('hex');
-        const tokenExpiry = Date.now() + 60000 ; //Token 1min la het han - (3600000 - 1hour)
+        const tokenExpiry = Date.now() + 90000 ; //Token 1min la het han - (3600000 - 1hour)
         // Luu token
         const success = tokenService.saveResetToken(resetToken, {
             userId: user.id,
@@ -62,7 +65,7 @@ router.post('/forgot-password', async(req,res) => {
         }
 
         // Gui email
-        const resetUrl  = `${req.protocol}://${req.get('host')}/reset-password?token=${resetToken}`
+        const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(user.email, resetUrl, user.namne)
             res.json({
@@ -76,11 +79,12 @@ router.post('/forgot-password', async(req,res) => {
             })
         } catch(emailError) {
             console.error("Email send error:", emailError)
-            
             // Rmove token neu gui that bai
             tokenService.deleteResetToken(resetToken)
         } 
     } catch(error) {
+        console.error('🚨 ERROR:', error)
+        console.error('🚨 STACK:', error.stack)
         console.error('Forgot password error:', error)
         res.status(500).json({
             success: false,

@@ -46,7 +46,7 @@ class emailService {
             from: process.env.FROM_EMAIL || 'noreply@bookstore.com',
             to: to,
             subject: 'Password Reset Request',
-            html: this.getResetPasswordTemplate(resetUrl, username)
+            html: this.getResetPassWordTemplate(resetUrl, username)
         }
 
         // Development chi log 
@@ -56,7 +56,6 @@ class emailService {
             console.log('Subject:', mailOptions.subject)
             console.log('Reset URL:', resetUrl)
             console.log('=====================================\n')
-
             // Simulate success
             return Promise.resolve({
                 messageId: 'dev-' + Date.now(),
@@ -171,7 +170,7 @@ class emailService {
     }
 
     // Gui email thong bao password da doi thanh cong 
-    async snedPasswordChangeNOtification(to, userName = "") {
+    async sendPasswordChangeNotification(to, userName = "") {
         const mailOptions = {
             from: process.env.FROM_EMAIL || "noreply@bookstore.com",
             to: to,
