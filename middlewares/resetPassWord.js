@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
@@ -13,9 +14,6 @@ const router = express.Router();
  * Gui email reset-password
  * **/
 router.post('/forgot-password', async(req,res) => {
-    console.log('🔥 Forgot password called:', req.body)
-    console.log('🔥 Email received:', req.body?.email)
-
     try {
         const { email } = req.body;
         if (!email) {
@@ -30,6 +28,7 @@ router.post('/forgot-password', async(req,res) => {
         let db
         try {
             db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+            console.log("doc user")
         } catch(error) {
             console.error("Dababase read error:", error);
             return res.status(500).json({
@@ -40,6 +39,7 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tim user
         const user = db.users.find(u => u.email === email);
+        console.log("tim user")
         if (!user) {
             return res.json({
                 success: true,
@@ -67,7 +67,7 @@ router.post('/forgot-password', async(req,res) => {
         // Gui email
         const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
         try {
-            await emailService.sendResetPasswordEmail(user.email, resetUrl, user.namne)
+            await emailService.sendResetPasswordEmail(user.email, resetUrl, user.name)
             res.json({
                 success: true,
                 message: 'Password reset email sent successfully',

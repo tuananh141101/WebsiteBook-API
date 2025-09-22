@@ -1,3 +1,4 @@
+require('dotenv').config();
 const nodemailer = require('nodemailer')
 
 class emailService {
@@ -8,7 +9,7 @@ class emailService {
     createTransporter() {
         // Development: Sử dụng Ethereal Email (fake SMTP)
         if (process.env.NODE_ENV === 'development') {
-            return nodemailer.createTransporter({
+            return nodemailer.createTransport({
                 host: 'smtp.ethereal.email',
                 port: 587,
                 secure: false,
@@ -20,7 +21,7 @@ class emailService {
         }
         // Production: Cấu hình theo provider
         if (process.env.EMAIL_PROVIDER === 'gmail') {
-            return nodemailer.createTransporter({
+            return nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
                 user: process.env.GMAIL_USER,
@@ -31,11 +32,11 @@ class emailService {
         // SMTP provider khác
         return nodemailer.createTransport({
             host: process.env.SMTP_HOST,
-            port: process.env.SMTP_HOST || 587,
-            secure: process.env.STMP_SECURE === 'true',
+            port: process.env.SMTP_PORT || 587,
+            secure: process.env.SMTP_SECURE === 'false',
             auth: {
-                user: process.env.STMP_USER,
-                pass: process.env.STMP_PASS
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
             }
         })
     }
@@ -43,7 +44,7 @@ class emailService {
     // Gui email reset password
     async sendResetPasswordEmail(to, resetUrl, username = '') {
         const mailOptions = {
-            from: process.env.FROM_EMAIL || 'noreply@bookstore.com',
+            from: process.env.FORM_EMAIL || 'noreply@bookstore.com',
             to: to,
             subject: 'Password Reset Request',
             html: this.getResetPassWordTemplate(resetUrl, username)

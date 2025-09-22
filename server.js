@@ -50,6 +50,7 @@ server.get("/", (req, res) => {
   res.send(`<h1>APIs:</h1><ul>${links.join("")}</ul>`);
 });
 
+server.use(express.json()); 
 server.use(addDefaultUserFields);
 server.use(passwordResetMiddleware);
 server.use(auth);  
