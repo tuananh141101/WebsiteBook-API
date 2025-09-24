@@ -66,6 +66,7 @@ router.post('/forgot-password', async(req,res) => {
 
         // Gui email
         const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        // const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(user.email, resetUrl, user.name)
             res.json({

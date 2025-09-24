@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "bcryptjs": "^3.0.2",
     "crypto": "^1.0.1",
     "dotenv": "^17.2.2",
