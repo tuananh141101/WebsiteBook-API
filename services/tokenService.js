@@ -1,10 +1,13 @@
 const fs = require('fs') // fs=file system module nodejs(read,wrtie,create file/folder)
 const path = require('path') 
+const { kv } = require('@vercel/kv')
 
 class TokenService {
   constructor() {
     this.resetTokensFile = path.join(__dirname, '../data/reset-tokens.json')
     this.ensureDataDirectory()
+    this.kvPrefix = 'reset_token:'
+    this.rateLimitPrefix = 'rate_limit:'
   }
 
   /**
