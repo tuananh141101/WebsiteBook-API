@@ -57,6 +57,8 @@ router.post('/forgot-password', async(req,res) => {
             .eq("email", email)
             .single()
         if (findError || !users) {
+            console.log("check findError", findError)
+            console.log("check users", users)
             return res.json({
                 success: true,
                 message: "If the email exist, areset link has been sent"
@@ -65,7 +67,8 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tao reset Token
         const resetToken = crypto.randomBytes(32).toString('hex');
-        const tokenExpiry = Date.now() + 90000 ; //Token 1min la het han - (3600000 - 1hour)
+        const tokenExpiry = new Date(Date.now() + 60 * 1000).toISOString(); // 1 phút la het han - (3600000 - 1hour)
+        const nowISO = new Date().toISOString();
         // // Luu token
         // const success = tokenService.saveResetToken(resetToken, {
         //     userId: user.id,
@@ -85,7 +88,7 @@ router.post('/forgot-password', async(req,res) => {
                 user_id: users.id,
                 email: users.email,
                 expires: tokenExpiry,
-                created_at: Date.now()
+                created_at: nowISO
             })
         if (saveError) {
             console.error('Failed to save reset token:', saveError)
