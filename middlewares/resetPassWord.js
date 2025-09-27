@@ -99,7 +99,8 @@ router.post('/forgot-password', async(req,res) => {
         }
 
         // Gui email
-        const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        // const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        const resetUrl  = `http://localhost:5173/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(users.email, resetUrl, users.name)
             res.json({
@@ -306,7 +307,7 @@ router.get('/verify-reset-token/:token', async(req,res) => {
         }
 
         // Kiem tra expiry(het han)
-        if (Date.now() > tokenData.expires) {
+        if (Date.now() > new Date(tokenData.expires).getTime()) {
             // tokenService.deleteResetToken(token)
             await supabase
                 .from('reset_tokens')
