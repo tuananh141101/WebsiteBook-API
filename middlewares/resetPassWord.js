@@ -57,6 +57,8 @@ router.post('/forgot-password', async(req,res) => {
             .eq("email", email)
             .single()
         if (findError || !users) {
+            console.log("check findError", findError)
+            console.log("check users", users)
             return res.json({
                 success: true,
                 message: "If the email exist, areset link has been sent"
@@ -65,7 +67,8 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tao reset Token
         const resetToken = crypto.randomBytes(32).toString('hex');
-        const tokenExpiry = Date.now() + 90000 ; //Token 1min la het han - (3600000 - 1hour)
+        const tokenExpiry = new Date(Date.now() + 60 * 1000).toISOString(); // 1 phút la het han - (3600000 - 1hour)
+        const nowISO = new Date().toISOString();
         // // Luu token
         // const success = tokenService.saveResetToken(resetToken, {
         //     userId: user.id,
@@ -85,7 +88,7 @@ router.post('/forgot-password', async(req,res) => {
                 user_id: users.id,
                 email: users.email,
                 expires: tokenExpiry,
-                created_at: Date.now()
+                created_at: nowISO
             })
         if (saveError) {
             console.error('Failed to save reset token:', saveError)
@@ -96,7 +99,8 @@ router.post('/forgot-password', async(req,res) => {
         }
 
         // Gui email
-        const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        // const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        const resetUrl  = `http://localhost:5173/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(users.email, resetUrl, users.name)
             res.json({
@@ -303,7 +307,7 @@ router.get('/verify-reset-token/:token', async(req,res) => {
         }
 
         // Kiem tra expiry(het han)
-        if (Date.now() > tokenData.expires) {
+        if (Date.now() > new Date(tokenData.expires).getTime()) {
             // tokenService.deleteResetToken(token)
             await supabase
                 .from('reset_tokens')
