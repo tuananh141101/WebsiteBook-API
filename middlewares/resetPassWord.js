@@ -67,7 +67,7 @@ router.post('/forgot-password', async(req,res) => {
 
         // Tao reset Token
         const resetToken = crypto.randomBytes(32).toString('hex');
-        const tokenExpiry = new Date(Date.now() + 60 * 1000).toISOString(); // 1 phút la het han - (3600000 - 1hour)
+        const tokenExpiry = new Date(Date.now() + 2 * 60 * 1000).toISOString(); // 1 phút la het han - (3600000 - 1hour)
         const nowISO = new Date().toISOString();
         // // Luu token
         // const success = tokenService.saveResetToken(resetToken, {
@@ -135,7 +135,6 @@ router.post('/forgot-password', async(req,res) => {
         })
     }
 })
-// 37d21e83abed48c508c27f0fc50cc7278c4c78b7ec3d506a2493e44b04acb4bf
 
 /**
  * POST/forgot-password
@@ -178,9 +177,9 @@ router.post('/reset-password', async (req,res) => {
                 message: 'Invalid or expired reset token'
             })
         }
-
+        const nowISO = new Date().toISOString();
         // Kiem tra expiry
-        if (Date.now() > tokenData.expires) {
+        if (nowISO > tokenData.expires) {
             await supabase  
                 .from("reset_tokens")
                 .delete()
@@ -334,6 +333,5 @@ router.get('/verify-reset-token/:token', async(req,res) => {
         })
     }
 })
-
 
 module.exports = router
