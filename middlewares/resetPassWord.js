@@ -57,8 +57,6 @@ router.post('/forgot-password', async(req,res) => {
             .eq("email", email)
             .single()
         if (findError || !users) {
-            console.log("check findError", findError)
-            console.log("check users", users)
             return res.json({
                 success: true,
                 message: "If the email exist, areset link has been sent"
@@ -81,15 +79,26 @@ router.post('/forgot-password', async(req,res) => {
         //         message: 'Failed to generate reset token'
         //     })
         // }
+        // const {error:saveError} = await supabase
+        //     .from("reset_tokens")
+        //     .insert({
+        //         token: resetToken,
+        //         user_id: users.id,
+        //         email: users.email,
+        //         expires: tokenExpiry,
+        //         created_at: nowISO
+        //     })
         const {error:saveError} = await supabase
             .from("reset_tokens")
-            .insert({
-                token: resetToken,
-                user_id: users.id,
-                email: users.email,
-                expires: tokenExpiry,
-                created_at: nowISO
-            })
+            .upsert({
+                    email: users.email,
+                    token: resetToken,
+                    user_id: users.id,
+                    expires: tokenExpiry,
+                    created_at: nowISO
+                },
+                { onConflict: ["user_id"] }
+            )
         if (saveError) {
             console.error('Failed to save reset token:', saveError)
             return res.status(500).json({
@@ -99,8 +108,8 @@ router.post('/forgot-password', async(req,res) => {
         }
 
         // Gui email
-        // const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
-        const resetUrl  = `http://localhost:5173/forget-password/sent?token=${resetToken}`
+        const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
+        // const resetUrl  = `http://localhost:5173/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(users.email, resetUrl, users.name)
             res.json({
@@ -308,10 +317,10 @@ router.get('/verify-reset-token/:token', async(req,res) => {
         // Kiem tra expiry(het han)
         if (Date.now() > new Date(tokenData.expires).getTime()) {
             // tokenService.deleteResetToken(token)
-            await supabase
-                .from('reset_tokens')
-                .delete()
-                .eq("token", token)
+            // await supabase
+            //     .from('reset_tokens')
+            //     .delete()
+            //     .eq("token", token)
             return res.status(400).json({
                 success: false,
                 valid: false,
