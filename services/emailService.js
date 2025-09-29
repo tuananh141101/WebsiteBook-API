@@ -80,7 +80,7 @@ class emailService {
         <!DOCTYPE html>
         <html>
         <head>
-            <meta charset="utf-8>
+            <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Password Reset</title>
             <style>
@@ -93,7 +93,7 @@ class emailService {
                     padding: 20px;
                 }
                 .container {
-                    max-width: 600px;
+                    width: 600px;
                     margin: 0 auto;
                     background: #fff;
                     border-radius: 8px;
@@ -101,7 +101,7 @@ class emailService {
                     overflow: hidden;
                 }
                 .header {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    background: #19110b;
                     color: white;
                     padding: 30px 20px;
                     text-align: center;
@@ -111,7 +111,7 @@ class emailService {
                 }
                 .button {
                     display: inline-block;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    background: #19110b;
                     color: white;
                     text-decoration: none;
                     padding: 12px 30px;
@@ -119,6 +119,7 @@ class emailService {
                     font-weight: bold;
                     margin: 20px 0;
                 }
+                a {color: white!important;}
                 .footer {
                     background: #f8f9fa;
                     padding: 20px;
@@ -150,7 +151,7 @@ class emailService {
                     <div class="warning">
                         <strong>⚠️ Important:</strong>
                         <ul>
-                            <li>This link will expire in 1 hour</li>
+                            <li>This link will expire in 1 mins</li>
                             <li>If you didn't request this, please ignore this email</li>
                             <li>Your password won't be changed unless you click the link above</li>
                         </ul>
@@ -162,7 +163,7 @@ class emailService {
                 </div>
                 <div class="footer">
                     <p>This email was sent automatically. Please do not reply.</p>
-                    <p>&copy; ${new Date().getFullYear()} Your App Name. All rights reserved.</p>
+                    <p>&copy; ${new Date().getFullYear()} BookStore. All rights reserved.</p>
                 </div>
             </div>
         </body>

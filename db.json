@@ -1345,7 +1345,7 @@
       "shippingAddress": {
         "type": "shipping",
         "fullname": "nguyen van b",
-        "address": "so 47 hoang van thai",
+        "address": "hoang van thai, thanhxuan, ha noi",
         "phone": "0986748929",
         "proviceId": "",
         "districtId": "",
@@ -1385,7 +1385,7 @@
       "billingAddress": {
         "type": "billing",
         "fullname": "newuser4",
-        "address": "so 47 hoang van thai, phuong khuong mai, thanh pho ha noi",
+        "address": "hoang van thai, phuong khuong mai, thanh pho ha noi",
         "phone": "0123456789",
         "email": "newuser4@gmail.com"
       },
