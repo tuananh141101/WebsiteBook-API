@@ -174,7 +174,7 @@ class emailService {
     // Gui email thong bao password da doi thanh cong 
     async sendPasswordChangeNotification(to, userName = "") {
         const mailOptions = {
-            from: process.env.FROM_EMAIL || "noreply@bookstore.com",
+            from: process.env.FORM_EMAIL || "noreply@bookstore.com",
             to: to,
             subject: 'Password Changed Successfully',
             html: `
