@@ -108,8 +108,6 @@ router.post('/forgot-password', async(req,res) => {
             });
         }
 
-        // Gui email
-        // const resetUrl  = `${req.protocol}://${req.get('host')}/forget-password/sent?token=${resetToken}`
         const resetUrl  = `${process.env.URL_VITE}/forget-password/sent?token=${resetToken}`
         try {
             await emailService.sendResetPasswordEmail(users.email, resetUrl, users.name)
@@ -199,6 +197,7 @@ router.post('/reset-password', async (req,res) => {
                 .eq('token', token)
             return res.status(400).json({
                 success: false,
+                valid: false,
                 message: 'Token expired'
             })
         }
@@ -242,6 +241,7 @@ router.post('/reset-password', async (req,res) => {
             console.error("Failed to update password:", updateError);
             return res.status(500).json({
                 success: false,
+                valid: false,
                 message: 'Failed to update password'
             })
         }
@@ -269,12 +269,14 @@ router.post('/reset-password', async (req,res) => {
             .eq("token", token)
         res.json({
             success: true,
+            valid: true,
             message: 'Password reset successfully'
         })        
     } catch (error) {
         console.error('Reset password error:', error)
         res.status(500).json({
             success: false,
+            valid: false,
             message: 'Internal server error'
         })
     }
