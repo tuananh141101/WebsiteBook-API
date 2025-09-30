@@ -24,6 +24,7 @@ router.post('/forgot-password', async(req,res) => {
         if (!email) {
             return res.status(400).json({
                 success: false,
+                valid:false,
                 message: 'Email is required'
             })
         }
@@ -114,6 +115,7 @@ router.post('/forgot-password', async(req,res) => {
             await emailService.sendResetPasswordEmail(users.email, resetUrl, users.name)
             res.json({
                 success: true,
+                valid: true,
                 message: 'Password reset email sent successfully',
                 // Doan nay la development testing
                 ...(process.env.NODE_ENV === 'development' && {
@@ -131,6 +133,7 @@ router.post('/forgot-password', async(req,res) => {
                 .eq('token', resetToken)
             return res,status(500).json({
                 success: false,
+                valid: false,
                 message: 'Failed to send reset eamail'
             });
         } 
@@ -140,6 +143,7 @@ router.post('/forgot-password', async(req,res) => {
         console.error('Forgot password error:', error)
         res.status(500).json({
             success: false,
+            valid: false,
             message: 'Internal server error'
         })
     }
