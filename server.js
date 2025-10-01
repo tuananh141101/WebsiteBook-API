@@ -11,7 +11,8 @@ const dynamicFilterMiddleware = require('./middlewares/dynamicFilter');
 const dynamicSort = require('./middlewares/dynamicSort');
 const paginationMiddleware = require('./middlewares/paginationMiddle');
 const finalResponseMiddleware = require("./middlewares/finalResponseMiddle");
-const passwordResetMiddleware = require("./middlewares/resetPassWord")
+const passwordResetMiddleware = require("./middlewares/resetPassWord");
+const authHandlerMiddleware = require("./middlewares/authHandler");
 
 server.db = router.db;
 
@@ -52,6 +53,7 @@ server.get("/", (req, res) => {
 
 server.use(express.json()); 
 server.use(addDefaultUserFields);
+server.use(authHandlerMiddleware);
 server.use(passwordResetMiddleware);
 server.use(auth);  
 server.use(router);
