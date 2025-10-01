@@ -1398,6 +1398,16 @@
         "districtId": "24",
         "wardId": "691"
       }
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "$2a$10$NMJrBLhgdewjIQZKNU/rve1hyKIv4hkeAY5amvI23QCLViXqHW31q",
+      "id": 5
+    },
+    {
+      "email": "nanicp17f@gmail.com",
+      "password": "$2a$10$KEUAn9rJIayMc8SbgyII4uFPtWo0O7dNtkWSioP7l/q4gG6NIkMDm",
+      "id": 6
     }
   ]
 }
