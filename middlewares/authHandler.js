@@ -7,38 +7,6 @@ const supabse_key = process.env.SUPABASE_ANON_KEY;
 
 const supabase = createClient(supabase_url, supabse_key);
 
-// router.get('/auth/test-connection', async (req,res) => {
-//     try {
-//         const { data, error } = await supabase
-//             .from("users")
-//             .select("id")
-//             .limit(1)
-//             .maybeSingle()
-        
-//         if (error) {
-//             return res.status(500).json({
-//                 success: false,
-//                 message: "Connect fail",
-//                 error: error.message
-//             })
-//         }
-
-//         console.log("check data", data);
-
-//         res.json({
-//             success: true,
-//             message: "Success connect supabse",
-//             data
-//         })
-//     } catch (error) {
-//         res.status(500).json({
-//             success: false,
-//             message: "Error server",
-//             error: error.message
-//         })
-//     }
-// })
-
 // Tao tai khoan
 router.post('/auth/signup', async(req,res) => {
     try {
@@ -174,35 +142,6 @@ router.post("/auth/login", async(req,res) => {
     }
 })
 
-// Lay ttin users
-router.get("/auth/users/:id", async(req, res) => {
-    try {
-        const {id} = req.params;
-        const {data,error} = await supabase
-            .from("users")
-            .select("*")
-            .eq("id", id)
-            .single();
-        if (error) {
-            return res.status(404).json({
-                success: false,
-                message: 'Notfound user',
-                error: error.message
-            });
-        }
-        res.json({
-            success: true,
-            data
-        });
-    } catch(error) {
-        res.status(500).json({
-            success: false,
-            message: 'Error server',
-            error: error.message
-        });
-    }
-})
-
 // Cap nhap billing/shipping address
 router.patch("/auth/users/:id/address", async(req,res) => {
     try {
@@ -216,7 +155,7 @@ router.patch("/auth/users/:id/address", async(req,res) => {
         const {data, error} = await supabase
             .from("users")
             .update(updateData)
-            .eq("id", iq)
+            .eq("id", id)
             .select()
             .single()
         if (error) {
@@ -242,7 +181,19 @@ router.patch("/auth/users/:id/address", async(req,res) => {
 
 router.post("/auth/logout", async(req,res) => {
     try {
+        const {error} = await supabase.auth.signOut();
+        if (error) {
+            res.status(400).json({
+                success: false,
+                message: "Logout failed",
+                error: error.message
+            })
+        }
 
+        res.json({
+            success: true,
+            message: "Log out successfully",
+        })
     } catch(error) {
         res.status(500).json({
             success: false,
@@ -261,12 +212,14 @@ router.get("/admin/users", async(req,res) => {
             process.env.SUPABASE_URL,
             process.env.SUPABASE_SERVICE_ROLE_KEY,
             {
-                autoRefreshToken: false,
-                persistSession: false
+                auth: {
+                    autoRefreshToken: false,
+                    persistSession: false
+                }
             }
         )
 
-        const {data: authUsers, error: authError} = await supabaseAdmin.auth.listUsers({
+        const {data: authUsers, error: authError} = await supabaseAdmin.auth.admin.listUsers({
             page: parseInt(page),
             perPage: parseInt(limit)
         })
@@ -311,6 +264,7 @@ router.get("/admin/users", async(req,res) => {
 router.get("/auth/users/search", async(req,res) => {
     try {
         const {email} = req.query
+        console.log("check email", email)
 
         if (!email) {
             return res.status(400).json({
@@ -331,7 +285,8 @@ router.get("/auth/users/search", async(req,res) => {
         )
 
         // Get all users
-        const { data: authUsers, error } = await supabaseAdmin.auth.admin.listUsers()
+        const { data: { users }, error } = await supabaseAdmin.auth.admin.listUsers()
+        console.log("chec authUsers", users)
 
         if (error) {
             return res.status(400).json({
@@ -340,7 +295,8 @@ router.get("/auth/users/search", async(req,res) => {
             })
         }
 
-        const foundUser = authUsers.users.find(u => u.email.toLowerCase().includes(email.toLowerCase()))
+        const foundUser = users.find(u => u.email.toLowerCase().includes(email.toLowerCase()))
+        console.log("check foundUser", foundUser)
         if (!foundUser) {
             return res.status(404).json({
                 success: false,
@@ -354,24 +310,30 @@ router.get("/auth/users/search", async(req,res) => {
             .select("*")
             .eq("id", foundUser.id)
             .single()
-        res.json({
-            success: true,
-            data: {
-                id: foundUser.id,
-                email: foundUser.email,
-                email_confirmed: !!foundUser.email_confirmed_at,
-                created_at: foundUser.created_at,
-                last_sign_in_at: foundUser.last_sign_in_at,
-                ...publicUser
-            }
-        })
+        console.log("chec publicUser", publicUser)
+        if (publicUser) {
+            return res.json({
+                success: true,
+                data: {
+                    id: foundUser.id,
+                    email: foundUser.email,
+                    email_confirmed: !!foundUser.email_confirmed_at,
+                    created_at: foundUser.created_at,
+                    last_sign_in_at: foundUser.last_sign_in_at,
+                    ...publicUser
+                }
+            })
+        }
+
     } catch (error) {
+        console.log("check error", error)
         res.status(500).json({
             success: false,
             error: error.message
         })
     }
 })
+
 
 // Dem tong so users(admin)
 router.get("/auth/users/stats", async(req,res) => {
@@ -389,16 +351,17 @@ router.get("/auth/users/stats", async(req,res) => {
         // Lay tat ca users
         const {data:authUsers,error} = await supabaseAdmin.auth.admin.listUsers();
         if (error) {
+            console.log("error", error)
             return res.status(400).json({
                 success: false,
                 error: error.message
             })
         }
-        const totalUsers = authUsers.users.length
-        const confirmedUsers = authUsers.users.filter(u => u.email_confirmed_at).length
-        const unconfirmedUsers = totalUsers - confirmedUsers
+        const totalUsers = authUsers.users.length;
+        const confirmedUsers = authUsers.users.filter(u => u.email_confirmed_at).length;
+        const unconfirmedUsers = totalUsers - confirmedUsers;
 
-        res.json({
+        return res.json({
             success: true,
             data: {
                 total_users: totalUsers,
@@ -415,6 +378,36 @@ router.get("/auth/users/stats", async(req,res) => {
         })
     }
 })
+
+// Lay ttin users
+router.get("/auth/users/:id", async(req, res) => {
+    try {
+        const {id} = req.params;
+        const {data,error} = await supabase
+            .from("users")
+            .select("*")
+            .eq("id", id)
+            .single();
+        if (error) {
+            return res.status(404).json({
+                success: false,
+                message: 'Notfound user',
+                error: error.message
+            });
+        }
+        res.json({
+            success: true,
+            data
+        });
+    } catch(error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error server',
+            error: error.message
+        });
+    }
+})
+
 
 // Del users
 router.delete("/auth/admin/users/:id", async(req,res) => {
