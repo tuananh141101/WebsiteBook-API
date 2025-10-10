@@ -8,7 +8,7 @@ const supabse_key = process.env.SUPABASE_ANON_KEY;
 const supabase = createClient(supabase_url, supabse_key);
 
 // Tao tai khoan
-router.post('/auth/signup', async(req,res) => {
+router.post('/api/auth/signup', async(req,res) => {
     try {
         const { email,password,fullName } = req.body;
 
