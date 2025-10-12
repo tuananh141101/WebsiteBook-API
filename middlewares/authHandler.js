@@ -408,7 +408,6 @@ router.get("/auth/users/:id", async(req, res) => {
     }
 })
 
-
 // Del users
 router.delete("/auth/admin/users/:id", async(req,res) => {
     try {
@@ -442,6 +441,37 @@ router.delete("/auth/admin/users/:id", async(req,res) => {
             message: "Remove users success (auth.users & public.users)"
         })
     } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Error server",
+            error: error.message
+        })
+    }
+})
+
+// setSession
+router.post("/auth/setsession", async(req,res) => {
+    try {
+        const {accessToken, refreshToken} = req.body;
+
+        const {data,error} = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken
+        })
+
+        if (!accessToken || !refreshToken) {
+            return res.status(400).json({
+                success: false,
+                message: "Access token and Refresh token is required",
+            })
+        }
+
+        res.status(201).json({
+            success: "true",
+            message: "Ok",
+            data: data
+        })
+    } catch(error) {
         res.status(500).json({
             success: false,
             message: "Error server",
