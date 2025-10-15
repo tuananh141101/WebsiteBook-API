@@ -29,29 +29,6 @@ router.post('/forgot-password', async(req,res) => {
             })
         }
 
-        // Doc user
-        // const dbPath = path.join(__dirname, "../db.json");
-        // let db
-        // try {
-        //     db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-        //     console.log("doc user")
-        // } catch(error) {
-        //     console.error("Dababase read error:", error);
-        //     return res.status(500).json({
-        //         success: false,
-        //         message: "Dababase error"
-        //     })
-        // }
-
-        // Tim user
-        // const user = db.users.find(u => u.email === email);
-        // console.log("tim user")
-        // if (!user) {
-        //     return res.json({
-        //         success: true,
-        //         message: "If the mail exists, a reset link has been sent"
-        //     })
-        // }
         const {data: users, error:findError} = await supabase
             .from("users")
             .select("*")
@@ -68,27 +45,6 @@ router.post('/forgot-password', async(req,res) => {
         const resetToken = crypto.randomBytes(32).toString('hex');
         const tokenExpiry = new Date(Date.now() + 2 * 60 * 1000).toISOString(); // 1 phút la het han - (3600000 - 1hour)
         const nowISO = new Date().toISOString();
-        // // Luu token
-        // const success = tokenService.saveResetToken(resetToken, {
-        //     userId: user.id,
-        //     email: user.email,
-        //     expires: tokenExpiry
-        // })
-        // if (!success) {
-        //     return res.status(500).json({
-        //         success: false,
-        //         message: 'Failed to generate reset token'
-        //     })
-        // }
-        // const {error:saveError} = await supabase
-        //     .from("reset_tokens")
-        //     .insert({
-        //         token: resetToken,
-        //         user_id: users.id,
-        //         email: users.email,
-        //         expires: tokenExpiry,
-        //         created_at: nowISO
-        //     })
         const {error:saveError} = await supabase
             .from("reset_tokens")
             .upsert({
@@ -169,14 +125,6 @@ router.post('/reset-password', async (req,res) => {
             })
         }
 
-        // Kiem tra token
-        // const tokenData = tokenService.getResetToken(token)
-        // if (!tokenData) {
-        //     return res.status(400).json({
-        //         success: false,
-        //         message: 'Invalid or expired reset token'
-        //     })
-        // }
         const {data: tokenData, error: tokenError} = await supabase 
             .from("reset_tokens")
             .select("*")
@@ -202,28 +150,6 @@ router.post('/reset-password', async (req,res) => {
             })
         }
 
-        // Doc database
-        // const dbPath = path.join(__dirname, '../db.json')
-        // let db 
-        // try {
-        //     db = JSON.parse(fs.readFileSync(dbPath, 'utf8')) //readFileSync  doc file dong bo (ngung toan bo chuong trinh cho den khi doc xong)
-        // } catch (error) {
-        //     console.error('Database read error:',error)
-        //     return res.status(500).json({
-        //         success: false,
-        //         message: 'Database error'
-        //     })
-        // }
-
-        // Tim user
-        // const userIndex = db.users.findIndex(u => u.id === tokenData.userId)
-        // if (userIndex === -1) {
-        //     return res.status(400).json({
-        //         success: false,
-        //         message: 'User not found'
-        //     })
-        // }
-
         // Hash password moi
         const hashedPassword = bcrypt.hashSync(newPassword, 10)
         // Cap nhap password
@@ -246,23 +172,6 @@ router.post('/reset-password', async (req,res) => {
             })
         }
 
-        // Luu database 
-        // try {
-        //     fs.writeFileSync(dbPath, JSON.stringify(db,null,2))
-        // } catch (error) {
-        //     console.error("Database write error:", error)
-        //     return res.status(500).json({
-        //         success: false,
-        //         message: 'Failed to update password'
-        //     })
-        // }
-
-        // Xoa token da su dung
-        // tokenService.deleteResetToken(token)
-        // res.json({
-        //     success: true,
-        //     message: 'Password reset successfully'
-        // })
         await supabase  
             .from("reset_tokens")
             .delete()
@@ -296,15 +205,6 @@ router.get('/verify-reset-token/:token', async(req,res) => {
                 message: 'Token is required'
             })
         }
-
-        // const tokenData = tokenService.getResetToken(token)
-        // if (!tokenData) {
-        //     return res.status(400).json({
-        //         success: false,
-        //         valid: false,
-        //         message: 'Invalid token'
-        //     })
-        // }
         
         // Lay token data
         const {data: tokenData, error: tokenError} = await supabase
@@ -322,11 +222,6 @@ router.get('/verify-reset-token/:token', async(req,res) => {
 
         // Kiem tra expiry(het han)
         if (Date.now() > new Date(tokenData.expires).getTime()) {
-            // tokenService.deleteResetToken(token)
-            // await supabase
-            //     .from('reset_tokens')
-            //     .delete()
-            //     .eq("token", token)
             return res.status(400).json({
                 success: false,
                 valid: false,
